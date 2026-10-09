@@ -59,8 +59,8 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
           {lang === "hi" ? "शुभ परिणय निमंत्रण" : "Royal Wedding Invitation"}
         </p>
 
-        {/* Couple Names in Reference Calligraphy */}
-        <h1 className="mt-1 font-calligraphy text-5xl sm:text-6xl text-copper-gold-gradient tracking-wide">
+        {/* Couple Names in Mozart Script (--font-script) */}
+        <h1 className="mt-1 font-script text-5xl sm:text-6xl md:text-7xl text-copper-gold-gradient py-2 overflow-visible leading-snug">
           Vipul & Sejal
         </h1>
 

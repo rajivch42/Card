@@ -39,9 +39,9 @@ export default function ClosingScreen({ lang }: ClosingScreenProps) {
           &ldquo;{closing.warmNote[lang]}&rdquo;
         </p>
 
-        {/* Copper-Gold Calligraphy Script Couple Sign-off */}
+        {/* Mozart Script Couple Sign-off (--font-script) */}
         <div className="mt-10 border-t border-[#C9A24B]/30 pt-8">
-          <p className="font-calligraphy text-5xl sm:text-6xl md:text-7xl text-copper-gold-gradient tracking-wide drop-shadow-md">
+          <p className="font-script text-5xl sm:text-6xl md:text-7xl text-copper-gold-gradient py-2 overflow-visible leading-snug drop-shadow-md">
             Vipul & Sejal
           </p>
           <div className="mt-2 flex items-center justify-center space-x-2 text-xs text-[#C9A24B]/90">

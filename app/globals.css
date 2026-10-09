@@ -1,7 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
 @import "tailwindcss";
 
+/* ==========================================================
+   MOZART SCRIPT FONT DEFINITION (BY BLESSED PRINT)
+   Place Mozart Script files in /public/fonts/ (e.g. MozartScript.woff2)
+   Fallback: Google Font "Pinyon Script"
+   ========================================================== */
+@font-face {
+  font-family: 'Mozart Script';
+  src: url('/fonts/MozartScript.woff2') format('woff2'),
+       url('/fonts/MozartScript.woff') format('woff'),
+       url('/fonts/MozartScript.otf') format('opentype'),
+       url('/fonts/MozartScript.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  /* ==========================================================
+     PRIMARY SCRIPT FONT VARIABLE (--font-script)
+     Use this CSS variable everywhere for decorative script.
+     Fallback stack: "Mozart Script", "Pinyon Script", cursive.
+     ========================================================== */
+  --font-script: "Mozart Script", "Pinyon Script", cursive;
+
+  /* Theme color tokens */
   --cream: #FDF8F4;
   --cream-card: rgba(255, 253, 250, 0.96);
   --maroon: #6E1F2E;
@@ -29,16 +53,15 @@ body {
    UNIFIED LUXURY TYPOGRAPHY SYSTEM
    ========================================================== */
 
-/* 1. Couple Names & Calligraphy Script (Matching the User Reference) */
+/* 1. Couple Names & Calligraphy Script (Mozart Script with Pinyon Script fallback) */
+.font-script,
 .font-calligraphy {
-  font-family: 'Alex Brush', 'Pinyon Script', 'Great Vibes', cursive;
+  font-family: var(--font-script);
+  font-style: normal;
+  letter-spacing: 0; /* Calligraphy letters connect naturally without wide spacing */
 }
 
-.font-script-formal {
-  font-family: 'Pinyon Script', cursive;
-}
-
-/* 2. High-Contrast Royal Devanagari (Hindi counterpart to the luxury English calligraphy) */
+/* 2. High-Contrast Royal Devanagari (Hindi) */
 .font-hindi-royal {
   font-family: 'Rozha One', 'Tiro Devanagari Hindi', 'Noto Serif Devanagari', serif;
 }
@@ -78,7 +101,7 @@ body {
    METALLIC GRADIENTS & TEXT EFFECTS
    ========================================================== */
 
-/* Exact Copper-Gold Metallic Gradient from the user reference card */
+/* Exact Copper-Gold Metallic Gradient from reference */
 .text-copper-gold-gradient {
   background: linear-gradient(135deg, #7A281E 0%, #A04A35 25%, #C8963E 65%, #F0D58C 100%);
   -webkit-background-clip: text;

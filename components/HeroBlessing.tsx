@@ -64,7 +64,7 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
           </p>
         </div>
 
-        {/* 4. Luxury Reference Typography Section (Matching the Reference Image) */}
+        {/* 4. Luxury Reference Typography Section */}
         <div className="mt-8 text-center">
           
           {/* Eyebrow: celebration of / शुभ परिणय उत्सव */}
@@ -72,15 +72,21 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
             {lang === "hi" ? "पावन परिणय सूत्र" : "celebration of"}
           </p>
 
-          {/* Groom Name: Sourabh style copper-gold script */}
-          <div className="my-1">
-            <h2 className="font-calligraphy text-5xl sm:text-6xl md:text-7xl font-normal text-copper-gold-gradient tracking-wide leading-tight">
-              {lang === "hi" ? couple.groom.name.hi : couple.groom.name.en}
-            </h2>
-            {lang === "hi" && (
-              <p className="font-calligraphy text-3xl sm:text-4xl text-copper-gold-gradient opacity-90 -mt-1">
+          {/* Groom Name: Mozart Script (with Pinyon fallback) for English, existing font for Hindi */}
+          <div className="my-1 overflow-visible">
+            {lang === "hi" ? (
+              <>
+                <h2 className="font-hindi-royal text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#6E1F2E] tracking-wide leading-tight">
+                  {couple.groom.name.hi}
+                </h2>
+                <p className="font-script text-4xl sm:text-5xl md:text-6xl text-copper-gold-gradient py-1 overflow-visible leading-snug">
+                  Vipul
+                </p>
+              </>
+            ) : (
+              <h2 className="font-script text-5xl sm:text-6xl md:text-7xl font-normal text-copper-gold-gradient py-2 overflow-visible leading-snug">
                 Vipul
-              </p>
+              </h2>
             )}
           </div>
 
@@ -94,24 +100,30 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
             ({couple.groom.grandparents[lang]})
           </p>
 
-          {/* Elegant Divider: —— & —— */}
+          {/* Elegant Divider: —— & —— with Mozart Script ampersand */}
           <div className="my-6 flex items-center justify-center space-x-3 sm:space-x-4">
             <span className="h-px w-16 sm:w-28 bg-gradient-to-r from-transparent via-[#C9A24B] to-[#C9A24B]/80" />
-            <span className="font-calligraphy text-4xl sm:text-5xl text-[#C9A24B] leading-none px-2 select-none">
+            <span className="font-script text-4xl sm:text-5xl text-[#C9A24B] leading-none px-2 select-none">
               &
             </span>
             <span className="h-px w-16 sm:w-28 bg-gradient-to-l from-transparent via-[#C9A24B] to-[#C9A24B]/80" />
           </div>
 
-          {/* Bride Name: Tejaswini style copper-gold script */}
-          <div className="my-1">
-            <h2 className="font-calligraphy text-5xl sm:text-6xl md:text-7xl font-normal text-copper-gold-gradient tracking-wide leading-tight">
-              {lang === "hi" ? couple.bride.name.hi : couple.bride.name.en}
-            </h2>
-            {lang === "hi" && (
-              <p className="font-calligraphy text-3xl sm:text-4xl text-copper-gold-gradient opacity-90 -mt-1">
+          {/* Bride Name: Mozart Script (with Pinyon fallback) for English, existing font for Hindi */}
+          <div className="my-1 overflow-visible">
+            {lang === "hi" ? (
+              <>
+                <h2 className="font-hindi-royal text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#6E1F2E] tracking-wide leading-tight">
+                  {couple.bride.name.hi}
+                </h2>
+                <p className="font-script text-4xl sm:text-5xl md:text-6xl text-copper-gold-gradient py-1 overflow-visible leading-snug">
+                  Sejal
+                </p>
+              </>
+            ) : (
+              <h2 className="font-script text-5xl sm:text-6xl md:text-7xl font-normal text-copper-gold-gradient py-2 overflow-visible leading-snug">
                 Sejal
-              </p>
+              </h2>
             )}
           </div>
 
