@@ -28,6 +28,12 @@ export default function RootLayout({
     <html lang="hi" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="bg-jali-pattern min-h-screen text-[#2A1A1A] antialiased selection:bg-[#C9A24B] selection:text-white">
         {children}

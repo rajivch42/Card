@@ -3,15 +3,16 @@
 
 /* ==========================================================
    MOZART SCRIPT FONT DEFINITION (BY BLESSED PRINT)
-   Place Mozart Script files in /public/fonts/ (e.g. MozartScript.woff2)
+   Loaded directly from /public/fonts/MozartScript-Regular.ttf
    Fallback: Google Font "Pinyon Script"
    ========================================================== */
 @font-face {
   font-family: 'Mozart Script';
-  src: url('/fonts/MozartScript.woff2') format('woff2'),
+  src: url('/fonts/MozartScript-Regular.ttf') format('truetype'),
+       url('/fonts/MozartScript.ttf') format('truetype'),
+       url('/fonts/MozartScript.woff2') format('woff2'),
        url('/fonts/MozartScript.woff') format('woff'),
-       url('/fonts/MozartScript.otf') format('opentype'),
-       url('/fonts/MozartScript.ttf') format('truetype');
+       url('/fonts/MozartScript.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -20,8 +21,7 @@
 :root {
   /* ==========================================================
      PRIMARY SCRIPT FONT VARIABLE (--font-script)
-     Use this CSS variable everywhere for decorative script.
-     Fallback stack: "Mozart Script", "Pinyon Script", cursive.
+     Mozart Script with Pinyon Script fallback
      ========================================================== */
   --font-script: "Mozart Script", "Pinyon Script", cursive;
 
@@ -53,12 +53,12 @@ body {
    UNIFIED LUXURY TYPOGRAPHY SYSTEM
    ========================================================== */
 
-/* 1. Couple Names & Calligraphy Script (Mozart Script with Pinyon Script fallback) */
+/* 1. Couple Names & Calligraphy Script (Mozart Script) */
 .font-script,
 .font-calligraphy {
   font-family: var(--font-script);
   font-style: normal;
-  letter-spacing: 0; /* Calligraphy letters connect naturally without wide spacing */
+  letter-spacing: 0;
 }
 
 /* 2. High-Contrast Royal Devanagari (Hindi) */

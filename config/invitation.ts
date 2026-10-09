@@ -202,7 +202,7 @@ export const invitationConfig: InvitationConfig = {
       },
       mapsUrl:
         "https://www.google.com/maps/place/25%C2%B054'42.4%22N+82%C2%B016'09.9%22E/@25.911764,82.2691625,87m/data=!3m1!1e3!4m12!1m7!3m6!1s0x3990750015412ed3:0xc5dbe1b16e94a9a5!2sRedigarapur+Patti+pratapgarh!8m2!3d25.9092192!4d82.2719086!16s%2Fg%2F11lyt2mmr7!3m3!8m2!3d25.911768!4d82.269428",
-      image: "/images/vivah.jpg",
+      image: "/images/vivah.png",
       microAnimation: "phere",
     },
   ],
@@ -221,7 +221,7 @@ export const invitationConfig: InvitationConfig = {
     },
     mapsUrl:
       "https://www.google.com/maps/place/25%C2%B054'42.4%22N+82%C2%B016'09.9%22E/@25.911764,82.2691625,87m/data=!3m1!1e3!4m12!1m7!3m6!1s0x3990750015412ed3:0xc5dbe1b16e94a9a5!2sRedigarapur+Patti+pratapgarh!8m2!3d25.9092192!4d82.2719086!16s%2Fg%2F11lyt2mmr7!3m3!8m2!3d25.911768!4d82.269428",
-    image: "/images/venue.jpg",
+    image: "/images/venue.png",
     station: {
       hi: "प्रतापगढ़ जंक्शन (PBH) — 24 किमी | माँ बेल्हा देवी धाम",
       en: "Pratapgarh Junction (PBH) — 24 km",
