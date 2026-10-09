@@ -29,24 +29,25 @@ function ScratchHeartItem({ label, value, isRevealed, onReveal }: ScratchHeartIt
     const width = (canvas.width = 110);
     const height = (canvas.height = 110);
 
-    // Draw rich golden-terracotta metallic surface on the canvas
+    // Draw rich metallic copper-gold texture
     const drawCover = () => {
       ctx.globalCompositeOperation = "source-over";
       const grad = ctx.createLinearGradient(0, 0, width, height);
-      grad.addColorStop(0, "#C9A24B");
-      grad.addColorStop(0.5, "#E6C97E");
+      grad.addColorStop(0, "#7A281E");
+      grad.addColorStop(0.35, "#C8963E");
+      grad.addColorStop(0.7, "#EBD38D");
       grad.addColorStop(1, "#8F422E");
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, width, height);
 
-      // Add "SCRATCH" text
-      ctx.fillStyle = "#4A121D";
-      ctx.font = "bold 12px Montserrat, sans-serif";
+      // Add "SCRATCH / खरोंचें" label
+      ctx.fillStyle = "#3D141E";
+      ctx.font = "bold 11px Cinzel, serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText("SCRATCH", width / 2, height / 2 - 8);
 
-      ctx.font = "bold 10px Tiro Devanagari Hindi, serif";
+      ctx.font = "bold 11px 'Tiro Devanagari Hindi', serif";
       ctx.fillText("खरोंचें", width / 2, height / 2 + 10);
     };
 
@@ -74,9 +75,7 @@ function ScratchHeartItem({ label, value, isRevealed, onReveal }: ScratchHeartIt
       if (percent > 0.5) {
         onReveal();
       }
-    } catch (e) {
-      // In case of error, allow reveal
-    }
+    } catch (e) {}
   };
 
   const scratch = (clientX: number, clientY: number) => {
@@ -115,14 +114,14 @@ function ScratchHeartItem({ label, value, isRevealed, onReveal }: ScratchHeartIt
     <div className="flex flex-col items-center">
       <div
         onClick={onReveal}
-        className="relative flex h-28 w-28 items-center justify-center cursor-pointer select-none rounded-2xl border-2 border-[#C9A24B] bg-gradient-to-br from-[#FFF5DE] to-[#FFEEDB] shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
+        className="relative flex h-28 w-28 items-center justify-center cursor-pointer select-none rounded-2xl border-2 border-[#C9A24B] bg-gradient-to-br from-[#FFF5DE] via-[#FFF9EE] to-[#FFEEDB] shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
       >
-        {/* Underlying revealed value */}
+        {/* Underlying revealed numeral with sculptural Playfair font */}
         <div className="flex flex-col items-center justify-center p-2 text-center">
-          <span className="font-devanagari text-4xl font-extrabold text-[#6E1F2E] drop-shadow-sm">
+          <span className="font-numeral text-4xl sm:text-5xl font-extrabold text-copper-gold-gradient drop-shadow-sm leading-none">
             {value}
           </span>
-          <span className="font-devanagari text-[11px] font-semibold text-[#8C631F]">
+          <span className="font-hindi-royal text-[11px] font-semibold text-[#8C631F] mt-1">
             {label}
           </span>
         </div>
@@ -142,7 +141,7 @@ function ScratchHeartItem({ label, value, isRevealed, onReveal }: ScratchHeartIt
       <button
         type="button"
         onClick={onReveal}
-        className="mt-2 text-[10px] text-[#8C631F] underline decoration-dotted hover:text-[#6E1F2E]"
+        className="mt-2 font-serif-italic text-xs text-[#8C631F] underline decoration-dotted hover:text-[#6E1F2E]"
       >
         {isRevealed ? "प्रकट (Revealed)" : "टैप करें (Tap to reveal)"}
       </button>
@@ -161,7 +160,6 @@ export default function SaveTheDate({ lang }: SaveTheDateProps) {
     seconds: 0,
   });
 
-  // Calculate live countdown
   useEffect(() => {
     const targetDate = new Date(saveTheDate.countdownTo).getTime();
 
@@ -194,7 +192,6 @@ export default function SaveTheDate({ lang }: SaveTheDateProps) {
 
     if (updated.every(Boolean) && !allRevealed) {
       setAllRevealed(true);
-      // Trigger golden confetti celebration
       try {
         confetti({
           particleCount: 80,
@@ -216,17 +213,17 @@ export default function SaveTheDate({ lang }: SaveTheDateProps) {
     <section className="relative z-20 mx-auto w-full max-w-xl px-4 py-8">
       <div className="rounded-3xl border-2 border-[#C9A24B]/40 bg-[#FFFDF9]/95 p-6 sm:p-8 shadow-xl backdrop-blur-md text-center">
         
-        {/* Section Heading */}
+        {/* Section Header */}
         <div className="flex items-center justify-center space-x-2 text-[#C9A24B]">
           <span className="h-px w-8 bg-[#C9A24B]" />
           <Heart className="h-4 w-4 fill-[#6E1F2E] text-[#6E1F2E]" />
           <span className="h-px w-8 bg-[#C9A24B]" />
         </div>
 
-        <h3 className="mt-2 font-devanagari text-2xl sm:text-3xl font-extrabold text-[#6E1F2E]">
+        <h3 className="mt-2 font-hindi-royal text-2xl sm:text-3xl font-extrabold text-[#6E1F2E]">
           {lang === "hi" ? "शुभ लग्न तिथि" : "Save The Auspicious Date"}
         </h3>
-        <p className="mt-1 font-devanagari text-xs sm:text-sm text-[#7A625C]">
+        <p className="mt-1 font-serif-italic text-xs sm:text-sm text-[#735A53]">
           {lang === "hi"
             ? "पावन विवाह तिथि प्रकट करने हेतु खरोंचें अथवा टैप करें"
             : "Scratch or tap each heart to reveal the wedding date"}
@@ -254,12 +251,12 @@ export default function SaveTheDate({ lang }: SaveTheDateProps) {
           />
         </div>
 
-        {/* Live Countdown Timer */}
-        <div className="mt-8 border-t border-[#E6C97E]/50 pt-6">
+        {/* Live Countdown Timer with Classic Sculptural Numerals */}
+        <div className="mt-8 border-t border-[#E6C97E]/40 pt-6">
           <div className="flex items-center justify-center space-x-1.5 text-xs font-semibold text-[#8C631F]">
             <Sparkles className="h-3.5 w-3.5 text-[#C9A24B]" />
-            <span className="font-devanagari">
-              {lang === "hi" ? "विवाह मुहूर्त तक शेष समय" : "Countdown to Wedding"}
+            <span className="font-hindi-royal">
+              {lang === "hi" ? "विवाह मुहूर्त तक शेष समय" : "Countdown to Auspicious Ceremony"}
             </span>
             <Sparkles className="h-3.5 w-3.5 text-[#C9A24B]" />
           </div>
@@ -275,10 +272,10 @@ export default function SaveTheDate({ lang }: SaveTheDateProps) {
                 key={idx}
                 className="flex flex-col items-center rounded-xl border border-[#C9A24B]/40 bg-gradient-to-b from-[#FFF5DE] to-[#FFFBF4] p-2.5 sm:p-3 shadow-md"
               >
-                <span className="font-devanagari text-2xl sm:text-3xl font-extrabold text-[#6E1F2E]">
+                <span className="font-numeral text-2xl sm:text-3xl font-extrabold text-[#6E1F2E] leading-tight">
                   {String(item.val).padStart(2, "0")}
                 </span>
-                <span className="font-devanagari text-[10px] sm:text-xs font-semibold text-[#8C631F]">
+                <span className="font-hindi-royal text-[10px] sm:text-xs font-semibold text-[#8C631F] mt-0.5">
                   {item.label}
                 </span>
               </div>

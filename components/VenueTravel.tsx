@@ -14,23 +14,23 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
 
   return (
     <section className="relative z-20 mx-auto w-full max-w-xl px-4 py-8">
-      <div className="overflow-hidden rounded-3xl border-2 border-[#C9A24B]/50 bg-[#FFFDF9]/95 shadow-2xl backdrop-blur-md">
+      <div className="overflow-hidden rounded-3xl border-2 border-[#C9A24B]/40 bg-[#FFFDF9]/95 shadow-2xl backdrop-blur-md">
         
         {/* Venue Painting Image */}
-        <div className="relative h-56 sm:h-64 w-full border-b-2 border-[#C9A24B]/40">
+        <div className="relative h-56 sm:h-64 w-full border-b-2 border-[#C9A24B]/30">
           <Image
             src={venueDetails.image}
             alt="विवाह स्थल प्रतापगढ़"
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2A0E15]/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#240C12]/85 via-transparent to-transparent" />
           
           <div className="absolute bottom-4 left-6 right-6 text-white">
-            <span className="font-devanagari text-xs font-semibold text-[#F5B82E] tracking-widest uppercase">
+            <span className="font-royal-eyebrow text-xs font-semibold text-[#F5B82E] tracking-widest uppercase">
               {venueDetails.title[lang]}
             </span>
-            <h4 className="font-devanagari text-xl sm:text-2xl font-bold text-[#FFF5DE]">
+            <h4 className="font-hindi-royal text-xl sm:text-2xl font-bold text-[#FFF5DE]">
               {venueDetails.venueName[lang]}
             </h4>
           </div>
@@ -43,10 +43,10 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
           <div className="flex items-start space-x-3 rounded-2xl border border-[#E6C97E]/50 bg-[#FFF9EE] p-4">
             <MapPin className="h-5 w-5 shrink-0 text-[#6E1F2E] mt-1" />
             <div>
-              <p className="font-devanagari text-xs font-bold text-[#8C631F]">
+              <p className="font-hindi-royal text-xs font-bold text-[#8C631F]">
                 {lang === "hi" ? "विस्तृत पता (Address)" : "Address"}
               </p>
-              <p className="font-devanagari text-sm font-semibold text-[#4A2E2B] leading-relaxed mt-0.5">
+              <p className="font-serif-luxury text-sm font-semibold text-[#4A2E2B] leading-relaxed mt-0.5">
                 {venueDetails.address[lang]}
               </p>
             </div>
@@ -61,10 +61,10 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
                 <Train className="h-4 w-4 text-[#6E1F2E]" />
               </div>
               <div className="flex-1">
-                <p className="font-devanagari font-bold text-[#6E1F2E]">
+                <p className="font-hindi-royal font-bold text-[#6E1F2E]">
                   {lang === "hi" ? "निकटतम रेलवे स्टेशन" : "Nearest Railway Station"}
                 </p>
-                <p className="font-devanagari text-xs text-[#5C4033] mt-0.5">
+                <p className="font-serif-luxury text-xs text-[#5C4033] mt-0.5">
                   {venueDetails.station[lang]}
                 </p>
               </div>
@@ -76,10 +76,10 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
                 <Plane className="h-4 w-4 text-[#6E1F2E]" />
               </div>
               <div className="flex-1">
-                <p className="font-devanagari font-bold text-[#6E1F2E]">
+                <p className="font-hindi-royal font-bold text-[#6E1F2E]">
                   {lang === "hi" ? "निकटतम हवाई अड्डा" : "Nearest Airport"}
                 </p>
-                <p className="font-devanagari text-xs text-[#5C4033] mt-0.5">
+                <p className="font-serif-luxury text-xs text-[#5C4033] mt-0.5">
                   {venueDetails.airport[lang]}
                 </p>
               </div>
@@ -91,10 +91,10 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
                 <Car className="h-4 w-4 text-[#6E1F2E]" />
               </div>
               <div className="flex-1">
-                <p className="font-devanagari font-bold text-[#6E1F2E]">
+                <p className="font-hindi-royal font-bold text-[#6E1F2E]">
                   {lang === "hi" ? "पार्किंग व्यवस्था" : "Parking Facility"}
                 </p>
-                <p className="font-devanagari text-xs text-[#5C4033] mt-0.5">
+                <p className="font-serif-luxury text-xs text-[#5C4033] mt-0.5">
                   {venueDetails.parking[lang]}
                 </p>
               </div>
@@ -108,7 +108,7 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
               href={venueDetails.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center space-x-2 rounded-xl border border-[#C9A24B] bg-[#6E1F2E] px-4 py-3 font-devanagari text-sm font-semibold text-[#FFF4DE] shadow-lg transition-all hover:bg-[#8E2337] active:scale-98"
+              className="flex w-full items-center justify-center space-x-2 rounded-xl border border-[#C9A24B] bg-gradient-to-r from-[#7A281E] via-[#8E2337] to-[#6E1F2E] px-4 py-3 font-hindi-royal text-sm font-semibold text-[#FFF4DE] shadow-lg transition-all hover:brightness-110 active:scale-98"
             >
               <MapPin className="h-4 w-4 text-[#F5B82E]" />
               <span>{lang === "hi" ? "गूगल मैप्स नेविगेशन शुरू करें" : "Open in Google Maps"}</span>

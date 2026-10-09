@@ -13,21 +13,21 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
 
   return (
     <section className="relative z-20 mx-auto w-full max-w-xl px-4 pt-16 pb-8">
-      {/* Outer Card with Royal Arch and Gold Double Borders */}
-      <div className="relative rounded-t-[120px] rounded-b-3xl border-2 border-[#C9A24B]/50 bg-[#FFFDF9]/95 p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+      {/* Outer Royal Card with Arch and Double Gold Border */}
+      <div className="relative rounded-t-[120px] rounded-b-3xl border-2 border-[#C9A24B]/40 bg-[#FFFDF9]/95 p-6 sm:p-10 shadow-2xl backdrop-blur-md">
         
-        {/* Ornate Gold Filigree Corner Accents */}
-        <div className="absolute top-4 left-6 text-[#C9A24B] opacity-80 text-xl select-none">❧</div>
-        <div className="absolute top-4 right-6 text-[#C9A24B] opacity-80 text-xl select-none">☙</div>
-        <div className="absolute bottom-4 left-4 text-[#C9A24B] opacity-80 text-lg select-none">✤</div>
-        <div className="absolute bottom-4 right-4 text-[#C9A24B] opacity-80 text-lg select-none">✤</div>
+        {/* Subtle decorative gold corner ornaments */}
+        <div className="absolute top-4 left-6 text-[#C9A24B] opacity-70 text-lg select-none">❧</div>
+        <div className="absolute top-4 right-6 text-[#C9A24B] opacity-70 text-lg select-none">☙</div>
+        <div className="absolute bottom-4 left-6 text-[#C9A24B] opacity-70 text-base select-none">✤</div>
+        <div className="absolute bottom-4 right-6 text-[#C9A24B] opacity-70 text-base select-none">✤</div>
 
-        {/* Inner Golden Inset Border */}
-        <div className="pointer-events-none absolute inset-2 rounded-t-[112px] rounded-b-[20px] border border-[#E6C97E]/40" />
+        {/* Inner Delicate Inset Border */}
+        <div className="pointer-events-none absolute inset-2.5 rounded-t-[110px] rounded-b-[20px] border border-[#E6C97E]/30" />
 
         {/* 1. Divine Radha-Krishna Emblem */}
         <div className="relative mx-auto mt-2 flex flex-col items-center text-center">
-          <div className="relative h-40 w-40 sm:h-48 sm:w-48 overflow-hidden rounded-full border-4 border-[#C9A24B] shadow-lg animate-pulse-glow">
+          <div className="relative h-40 w-40 sm:h-44 sm:w-44 overflow-hidden rounded-full border-3 border-[#C9A24B] shadow-lg animate-pulse-glow">
             <Image
               src={blessing.motifImage}
               alt="राधा कृष्ण"
@@ -37,88 +37,99 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
             />
           </div>
 
-          <p className="mt-3 font-devanagari text-xs sm:text-sm font-semibold tracking-wider text-[#8C631F]">
+          <p className="mt-3 font-hindi-royal text-xs sm:text-sm font-semibold tracking-widest text-[#8C631F]">
             ॥ ॐ श्री राधा-कृष्णाय नमः ॥
           </p>
         </div>
 
         {/* 2. Sacred Sanskrit Shloka */}
-        <div className="mt-6 rounded-2xl border border-[#E6C97E]/50 bg-[#FDF5E6]/60 p-4 text-center shadow-inner">
+        <div className="mt-5 rounded-2xl border border-[#E6C97E]/40 bg-[#FDF7ED]/70 p-4 text-center shadow-inner">
           <div className="mx-auto mb-1 flex items-center justify-center space-x-2 text-[#C9A24B]">
             <span className="h-px w-6 bg-[#C9A24B]" />
             <span className="text-xs">卐</span>
             <span className="h-px w-6 bg-[#C9A24B]" />
           </div>
-          <p className="font-devanagari text-sm sm:text-base font-bold leading-relaxed text-[#6E1F2E] whitespace-pre-line">
+          <p className="font-hindi-shloka text-sm sm:text-base font-bold leading-relaxed text-[#6E1F2E] whitespace-pre-line">
             {blessing.shloka}
           </p>
-          <p className="mt-2 font-devanagari text-[11px] sm:text-xs text-[#7A625C] italic">
+          <p className="mt-2 font-serif-italic text-xs text-[#735A53]">
             {blessing.shlokaMeaning[lang]}
           </p>
         </div>
 
-        {/* 3. Auspicious Family Blessing Line */}
+        {/* 3. Auspicious Blessing Line */}
         <div className="mt-6 text-center">
-          <p className="font-devanagari text-sm sm:text-base text-[#4A2E2B] leading-relaxed font-medium">
+          <p className="font-serif-luxury text-sm sm:text-base text-[#4A2E2B] leading-relaxed font-medium px-2">
             {blessing.line[lang]}
           </p>
         </div>
 
-        {/* 4. Couple Names & Family Lineage */}
-        <div className="mt-8 space-y-6 text-center">
+        {/* 4. Luxury Reference Typography Section (Matching the Reference Image) */}
+        <div className="mt-8 text-center">
           
-          {/* Groom Section */}
-          <div className="rounded-2xl border border-[#C9A24B]/30 bg-gradient-to-b from-[#FFF9EE] to-[#FFFDF9] p-5 shadow-sm">
-            <span className="inline-block rounded-full border border-[#C9A24B]/40 bg-[#FFF5E0] px-3 py-0.5 font-devanagari text-xs font-semibold text-[#8C631F]">
-              {lang === "hi" ? "आयुष्मान" : "Groom"}
-            </span>
-            <h2 className="mt-1 font-devanagari text-3xl sm:text-4xl font-extrabold text-[#6E1F2E] tracking-wide drop-shadow-sm">
-              {couple.groom.name[lang]}
+          {/* Eyebrow: celebration of / शुभ परिणय उत्सव */}
+          <p className="font-serif-italic text-sm sm:text-base text-[#8C6F5A] tracking-wider mb-2">
+            {lang === "hi" ? "पावन परिणय सूत्र" : "celebration of"}
+          </p>
+
+          {/* Groom Name: Sourabh style copper-gold script */}
+          <div className="my-1">
+            <h2 className="font-calligraphy text-5xl sm:text-6xl md:text-7xl font-normal text-copper-gold-gradient tracking-wide leading-tight">
+              {lang === "hi" ? couple.groom.name.hi : couple.groom.name.en}
             </h2>
-            <div className="mt-2 space-y-1 font-devanagari text-xs sm:text-sm text-[#5C4033]">
-              <p className="font-semibold text-[#6E1F2E]">
-                {couple.groom.parents[lang]}
+            {lang === "hi" && (
+              <p className="font-calligraphy text-3xl sm:text-4xl text-copper-gold-gradient opacity-90 -mt-1">
+                Vipul
               </p>
-              <p className="text-[#8C631F]">
-                {couple.groom.grandparents[lang]}
-              </p>
-            </div>
+            )}
           </div>
 
-          {/* Golden Sang / Ampersand Flourish */}
-          <div className="relative flex items-center justify-center">
-            <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#C9A24B] to-transparent" />
-            <div className="mx-4 flex h-12 w-12 items-center justify-center rounded-full border border-[#C9A24B] bg-[#FFF5DE] shadow-md">
-              <span className="font-devanagari text-lg font-bold text-[#6E1F2E]">
-                {lang === "hi" ? "संग" : "weds"}
-              </span>
-            </div>
-            <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#C9A24B] to-transparent" />
+          {/* Groom Parents */}
+          <p className="mt-3 font-serif-luxury text-sm sm:text-base font-medium text-[#3A2A24] leading-relaxed">
+            {couple.groom.parents[lang]}
+          </p>
+
+          {/* Groom Grandparents (Italicized in parentheses like reference) */}
+          <p className="mt-1 font-serif-italic text-xs sm:text-sm text-[#6D5248] leading-normal">
+            ({couple.groom.grandparents[lang]})
+          </p>
+
+          {/* Elegant Divider: —— & —— */}
+          <div className="my-6 flex items-center justify-center space-x-3 sm:space-x-4">
+            <span className="h-px w-16 sm:w-28 bg-gradient-to-r from-transparent via-[#C9A24B] to-[#C9A24B]/80" />
+            <span className="font-calligraphy text-4xl sm:text-5xl text-[#C9A24B] leading-none px-2 select-none">
+              &
+            </span>
+            <span className="h-px w-16 sm:w-28 bg-gradient-to-l from-transparent via-[#C9A24B] to-[#C9A24B]/80" />
           </div>
 
-          {/* Bride Section */}
-          <div className="rounded-2xl border border-[#C9A24B]/30 bg-gradient-to-b from-[#FFF9EE] to-[#FFFDF9] p-5 shadow-sm">
-            <span className="inline-block rounded-full border border-[#C9A24B]/40 bg-[#FFF5E0] px-3 py-0.5 font-devanagari text-xs font-semibold text-[#8C631F]">
-              {lang === "hi" ? "आयुष्मती" : "Bride"}
-            </span>
-            <h2 className="mt-1 font-devanagari text-3xl sm:text-4xl font-extrabold text-[#6E1F2E] tracking-wide drop-shadow-sm">
-              {couple.bride.name[lang]}
+          {/* Bride Name: Tejaswini style copper-gold script */}
+          <div className="my-1">
+            <h2 className="font-calligraphy text-5xl sm:text-6xl md:text-7xl font-normal text-copper-gold-gradient tracking-wide leading-tight">
+              {lang === "hi" ? couple.bride.name.hi : couple.bride.name.en}
             </h2>
-            <div className="mt-2 space-y-1 font-devanagari text-xs sm:text-sm text-[#5C4033]">
-              <p className="font-semibold text-[#6E1F2E]">
-                {couple.bride.parents[lang]}
+            {lang === "hi" && (
+              <p className="font-calligraphy text-3xl sm:text-4xl text-copper-gold-gradient opacity-90 -mt-1">
+                Sejal
               </p>
-              <p className="text-[#8C631F]">
-                {couple.bride.grandparents[lang]}
-              </p>
-            </div>
+            )}
           </div>
+
+          {/* Bride Parents */}
+          <p className="mt-3 font-serif-luxury text-sm sm:text-base font-medium text-[#3A2A24] leading-relaxed">
+            {couple.bride.parents[lang]}
+          </p>
+
+          {/* Bride Grandparents */}
+          <p className="mt-1 font-serif-italic text-xs sm:text-sm text-[#6D5248] leading-normal">
+            ({couple.bride.grandparents[lang]})
+          </p>
 
         </div>
 
-        {/* Location Banner */}
-        <div className="mt-6 border-t border-[#E6C97E]/50 pt-4 text-center">
-          <p className="font-devanagari text-xs sm:text-sm font-semibold tracking-wider text-[#8C631F]">
+        {/* Bottom Location & Date Bar */}
+        <div className="mt-10 border-t border-[#E6C97E]/40 pt-4 text-center">
+          <p className="font-royal-eyebrow text-xs sm:text-sm font-semibold tracking-widest text-[#8C631F]">
             {city[lang]} • {state[lang]}
           </p>
         </div>
