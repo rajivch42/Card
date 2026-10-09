@@ -9,7 +9,7 @@ interface ClosingScreenProps {
 }
 
 export default function ClosingScreen({ lang }: ClosingScreenProps) {
-  const { closing, couple } = invitationConfig;
+  const { closing } = invitationConfig;
 
   return (
     <footer className="relative z-20 mt-12 w-full bg-gradient-to-b from-[#3D141E] via-[#240C12] to-[#14060A] px-4 py-16 text-[#FFF5DE] shadow-inner">
@@ -22,16 +22,30 @@ export default function ClosingScreen({ lang }: ClosingScreenProps) {
           <span className="h-px w-10 bg-[#C9A24B]" />
         </div>
 
-        {/* Title: दर्शनाभिलाषी */}
+        {/* Title: दर्शनाभिलाषी / With Warm Regards */}
         <h3 className="font-hindi-royal text-xl sm:text-2xl font-bold tracking-widest text-[#E6C97E]">
           {closing.darshanabhilashi[lang]}
         </h3>
 
-        {/* Host Names */}
-        <div className="mt-4 rounded-2xl border border-[#C9A24B]/30 bg-[#4A1824]/60 p-6 sm:p-8 shadow-lg backdrop-blur-sm">
-          <p className="font-serif-luxury text-base sm:text-lg font-semibold leading-relaxed text-[#FFF8ED] whitespace-pre-line">
-            {closing.family[lang]}
-          </p>
+        {/* Royal Family Members Roll of Honor */}
+        <div className="mt-5 rounded-2xl border border-[#C9A24B]/40 bg-[#4A1824]/75 p-6 sm:p-8 shadow-xl backdrop-blur-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-left sm:text-center">
+            {closing.familyMembers?.map((member, idx) => (
+              <div
+                key={idx}
+                className="flex items-center justify-start sm:justify-center space-x-2 text-sm sm:text-base font-serif-luxury text-[#FFF8ED] transition-transform hover:translate-x-1 sm:hover:translate-x-0"
+              >
+                <span className="text-[#E6C97E] text-xs shrink-0">✦</span>
+                <span className="font-semibold tracking-wide">{member[lang]}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 border-t border-[#C9A24B]/30 pt-4 text-center">
+            <p className="font-hindi-royal text-sm sm:text-base font-bold text-[#E6C97E] tracking-widest">
+              {lang === "hi" ? "॥ एवं समस्त चौरसिया परिवार ॥" : "— & All Family Members —"}
+            </p>
+          </div>
         </div>
 
         {/* Warm Closing Note */}

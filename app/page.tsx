@@ -31,7 +31,16 @@ export default function WeddingInvitationPage() {
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-jali-pattern selection:bg-[#C9A24B] selection:text-white">
-      {/* 1. Envelope Opening Gate (Tap envelope to break seal & open with bright light) */}
+      {/* Background Preloaded Audio Element */}
+      <audio
+        id="wedding-bg-audio"
+        src="/audio/jashn_e_bahara.mp3"
+        loop
+        preload="auto"
+        className="hidden"
+      />
+
+      {/* 1. Envelope Opening Gate (Tap envelope to break seal & open with smooth card extraction & flash) */}
       {!isUnlocked && (
         <EnvelopeOpening onOpen={handleOpenInvitation} lang={lang} />
       )}

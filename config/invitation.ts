@@ -57,6 +57,7 @@ export interface InvitationConfig {
   closing: {
     darshanabhilashi: BilingualText;
     family: BilingualText;
+    familyMembers?: BilingualText[];
     warmNote: BilingualText;
   };
   music: {
@@ -83,8 +84,8 @@ export const invitationConfig: InvitationConfig = {
         en: "Vipul Chaurasiya",
       },
       parents: {
-        hi: "श्रीमती दुर्गादेवी चौरसिया एवं श्री सुरेश चौरसिया",
-        en: "Smt. Durgadevi Chaurasiya & Shri Suresh Chaurasiya",
+        hi: "सुपुत्र: श्रीमती दुर्गादेवी चौरसिया एवं श्री सुरेश चौरसिया",
+        en: "Son of Smt. Durgadevi Chaurasiya & Shri Suresh Chaurasiya",
       },
       grandparents: {
         hi: "पौत्र: श्रीमती मूर्तिदेवी एवं श्री सालिकराम चौरसिया",
@@ -240,9 +241,20 @@ export const invitationConfig: InvitationConfig = {
       hi: "॥ दर्शनाभिलाषी ॥",
       en: "With Warm Regards",
     },
+    familyMembers: [
+      { hi: "श्री सालिकराम चौरसिया", en: "Mr. Salikram Chaurasiya" },
+      { hi: "श्री सुरेश चौरसिया", en: "Mr. Suresh Chaurasiya" },
+      { hi: "श्री राजेश चौरसिया", en: "Mr. Rajesh Chaurasiya" },
+      { hi: "श्री रमेश चौरसिया", en: "Mr. Ramesh Chaurasiya" },
+      { hi: "श्री बृजेश चौरसिया", en: "Mr. Brijesh Chaurasiya" },
+      { hi: "श्री रितेश चौरसिया", en: "Mr. Ritesh Chaurasiya" },
+      { hi: "श्री राजीव चौरसिया", en: "Mr. Rajiv Chaurasiya" },
+      { hi: "श्री संजीव चौरसिया", en: "Mr. Sanjiv Chaurasiya" },
+      { hi: "श्री ओम चौरसिया", en: "Mr. Om Chaurasiya" },
+    ],
     family: {
-      hi: "श्रीमती मूर्तिदेवी — श्री सालिकराम चौरसिया\nश्रीमती दुर्गादेवी — श्री सुरेश चौरसिया\nएवं समस्त चौरसिया परिवार",
-      en: "Smt. Murtidevi — Shri Salikram Chaurasiya\nSmt. Durgadevi — Shri Suresh Chaurasiya\n& All Family Elders & Relatives",
+      hi: "श्री सालिकराम चौरसिया • श्री सुरेश चौरसिया • श्री राजेश चौरसिया\nश्री रमेश चौरसिया • श्री बृजेश चौरसिया • श्री रितेश चौरसिया\nश्री राजीव चौरसिया • श्री संजीव चौरसिया • श्री ओम चौरसिया\nएवं समस्त चौरसिया परिवार",
+      en: "Mr. Salikram Chaurasiya • Mr. Suresh Chaurasiya • Mr. Rajesh Chaurasiya\nMr. Ramesh Chaurasiya • Mr. Brijesh Chaurasiya • Mr. Ritesh Chaurasiya\nMr. Rajiv Chaurasiya • Mr. Sanjiv Chaurasiya • Mr. Om Chaurasiya\n& All Family Members",
     },
     warmNote: {
       hi: "आपकी गरिमामयी उपस्थिति ही हमारा परम सौभाग्य एवं नवदम्पति के लिए अनमोल आशीष होगी।",

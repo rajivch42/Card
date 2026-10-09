@@ -27,7 +27,7 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
 
         {/* 1. Divine Radha-Krishna Emblem */}
         <div className="relative mx-auto mt-2 flex flex-col items-center text-center">
-          <div className="relative h-40 w-40 sm:h-44 sm:w-44 overflow-hidden rounded-full border-3 border-[#C9A24B] shadow-lg animate-pulse-glow">
+          <div className="relative h-40 w-40 sm:h-48 sm:w-48 overflow-hidden rounded-full border-3 border-[#C9A24B] shadow-lg animate-pulse-glow">
             <Image
               src={blessing.motifImage}
               alt="राधा कृष्ण"
@@ -43,7 +43,7 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
         </div>
 
         {/* 2. Sacred Sanskrit Shloka */}
-        <div className="mt-5 rounded-2xl border border-[#E6C97E]/40 bg-[#FDF7ED]/70 p-4 text-center shadow-inner">
+        <div className="mt-5 rounded-2xl border border-[#E6C97E]/40 bg-[#FDF7ED]/70 p-4 sm:p-5 text-center shadow-inner">
           <div className="mx-auto mb-1 flex items-center justify-center space-x-2 text-[#C9A24B]">
             <span className="h-px w-6 bg-[#C9A24B]" />
             <span className="text-xs">卐</span>
@@ -67,73 +67,73 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
         {/* 4. Luxury Reference Typography Section */}
         <div className="mt-8 text-center">
           
-          {/* Eyebrow: celebration of / शुभ परिणय उत्सव */}
-          <p className="font-serif-italic text-sm sm:text-base text-[#8C6F5A] tracking-wider mb-2">
-            {lang === "hi" ? "पावन परिणय सूत्र" : "celebration of"}
+          {/* Eyebrow: celebration of / पावन परिणय सूत्र */}
+          <p className="font-serif-italic text-sm sm:text-base text-[#8C6F5A] tracking-widest uppercase mb-2">
+            {lang === "hi" ? "॥ पावन परिणय सूत्र ॥" : "celebration of"}
           </p>
 
-          {/* Groom Name: Mozart Script (with Pinyon fallback) for English, existing font for Hindi */}
-          <div className="my-1 overflow-visible">
+          {/* Groom Name: Mozart Script */}
+          <div className="my-2 overflow-visible">
             {lang === "hi" ? (
               <>
                 <h2 className="font-hindi-royal text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#6E1F2E] tracking-wide leading-tight">
                   {couple.groom.name.hi}
                 </h2>
-                <p className="font-script text-4xl sm:text-5xl md:text-6xl text-copper-gold-gradient py-1 overflow-visible leading-snug">
+                <p className="font-script text-5xl sm:text-6xl md:text-7xl text-copper-gold-gradient py-1 overflow-visible leading-tight">
                   Vipul
                 </p>
               </>
             ) : (
-              <h2 className="font-script text-5xl sm:text-6xl md:text-7xl font-normal text-copper-gold-gradient py-2 overflow-visible leading-snug">
+              <h2 className="font-script text-6xl sm:text-7xl md:text-8xl font-normal text-copper-gold-gradient py-2 overflow-visible leading-tight drop-shadow-sm">
                 Vipul
               </h2>
             )}
           </div>
 
           {/* Groom Parents */}
-          <p className="mt-3 font-serif-luxury text-sm sm:text-base font-medium text-[#3A2A24] leading-relaxed">
+          <p className="mt-2 font-serif-luxury text-sm sm:text-base font-semibold text-[#2D1B1B] leading-relaxed">
             {couple.groom.parents[lang]}
           </p>
 
           {/* Groom Grandparents (Italicized in parentheses like reference) */}
-          <p className="mt-1 font-serif-italic text-xs sm:text-sm text-[#6D5248] leading-normal">
+          <p className="mt-0.5 font-serif-italic text-xs sm:text-sm text-[#6D5248] leading-normal">
             ({couple.groom.grandparents[lang]})
           </p>
 
           {/* Elegant Divider: —— & —— with Mozart Script ampersand */}
           <div className="my-6 flex items-center justify-center space-x-3 sm:space-x-4">
             <span className="h-px w-16 sm:w-28 bg-gradient-to-r from-transparent via-[#C9A24B] to-[#C9A24B]/80" />
-            <span className="font-script text-4xl sm:text-5xl text-[#C9A24B] leading-none px-2 select-none">
+            <span className="font-script text-5xl sm:text-6xl text-[#C9A24B] leading-none px-3 select-none">
               &
             </span>
             <span className="h-px w-16 sm:w-28 bg-gradient-to-l from-transparent via-[#C9A24B] to-[#C9A24B]/80" />
           </div>
 
-          {/* Bride Name: Mozart Script (with Pinyon fallback) for English, existing font for Hindi */}
-          <div className="my-1 overflow-visible">
+          {/* Bride Name: Mozart Script */}
+          <div className="my-2 overflow-visible">
             {lang === "hi" ? (
               <>
                 <h2 className="font-hindi-royal text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#6E1F2E] tracking-wide leading-tight">
                   {couple.bride.name.hi}
                 </h2>
-                <p className="font-script text-4xl sm:text-5xl md:text-6xl text-copper-gold-gradient py-1 overflow-visible leading-snug">
+                <p className="font-script text-5xl sm:text-6xl md:text-7xl text-copper-gold-gradient py-1 overflow-visible leading-tight">
                   Sejal
                 </p>
               </>
             ) : (
-              <h2 className="font-script text-5xl sm:text-6xl md:text-7xl font-normal text-copper-gold-gradient py-2 overflow-visible leading-snug">
+              <h2 className="font-script text-6xl sm:text-7xl md:text-8xl font-normal text-copper-gold-gradient py-2 overflow-visible leading-tight drop-shadow-sm">
                 Sejal
               </h2>
             )}
           </div>
 
           {/* Bride Parents */}
-          <p className="mt-3 font-serif-luxury text-sm sm:text-base font-medium text-[#3A2A24] leading-relaxed">
+          <p className="mt-2 font-serif-luxury text-sm sm:text-base font-semibold text-[#2D1B1B] leading-relaxed">
             {couple.bride.parents[lang]}
           </p>
 
           {/* Bride Grandparents */}
-          <p className="mt-1 font-serif-italic text-xs sm:text-sm text-[#6D5248] leading-normal">
+          <p className="mt-0.5 font-serif-italic text-xs sm:text-sm text-[#6D5248] leading-normal">
             ({couple.bride.grandparents[lang]})
           </p>
 
