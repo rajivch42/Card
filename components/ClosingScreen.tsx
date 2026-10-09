@@ -30,15 +30,25 @@ export default function ClosingScreen({ lang }: ClosingScreenProps) {
         {/* Royal Family Members Roll of Honor */}
         <div className="mt-5 rounded-2xl border border-[#C9A24B]/40 bg-[#4A1824]/75 p-6 sm:p-8 shadow-xl backdrop-blur-md">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-left sm:text-center">
-            {closing.familyMembers?.map((member, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-start sm:justify-center space-x-2 text-sm sm:text-base font-serif-luxury text-[#FFF8ED] transition-transform hover:translate-x-1 sm:hover:translate-x-0"
-              >
-                <span className="text-[#E6C97E] text-xs shrink-0">✦</span>
-                <span className="font-semibold tracking-wide">{member[lang]}</span>
-              </div>
-            ))}
+            {closing.familyMembers?.map((member, idx) => {
+              const fullText = member[lang];
+              const parts = fullText.split(" ");
+              const prefix = parts[0];
+              const name = parts.slice(1).join(" ");
+
+              return (
+                <div
+                  key={idx}
+                  className={`flex items-center justify-start sm:justify-center space-x-2 text-sm sm:text-base ${
+                    lang === "hi" ? "font-hindi-royal" : "font-serif-luxury"
+                  } text-[#FFF8ED] transition-transform hover:translate-x-1 sm:hover:translate-x-0`}
+                >
+                  <span className="text-[#E6C97E] text-xs shrink-0">✦</span>
+                  <span className="font-bold text-[#F5D580] tracking-wider">{prefix}</span>
+                  <span className="font-semibold tracking-wide">{name}</span>
+                </div>
+              );
+            })}
           </div>
 
           <div className="mt-6 border-t border-[#C9A24B]/30 pt-4 text-center">

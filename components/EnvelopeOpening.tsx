@@ -79,49 +79,47 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
       </div>
 
       <div className="relative z-10 flex flex-col items-center max-w-lg text-center">
-        {/* Sacred Invocation */}
-        <div className="mb-3 flex items-center space-x-2 text-[#E6C97E]">
-          <span className="h-px w-8 bg-[#C9A24B]" />
-          <span className="font-hindi-royal text-base sm:text-lg tracking-widest font-semibold">
+        {/* Sacred Invocation & Mystery Invitation Header (NO names on cover for surprise factor) */}
+        <div className="mb-2 flex items-center space-x-3 text-[#E6C97E]">
+          <span className="h-px w-8 sm:w-14 bg-gradient-to-r from-transparent via-[#E6C97E] to-[#C9A24B]" />
+          <span className="font-hindi-royal text-base sm:text-xl tracking-widest font-bold text-[#FFE6A3] drop-shadow-md">
             ॥ श्री गणेशाय नमः ॥
           </span>
-          <span className="h-px w-8 bg-[#C9A24B]" />
+          <span className="h-px w-8 sm:w-14 bg-gradient-to-l from-transparent via-[#E6C97E] to-[#C9A24B]" />
         </div>
 
-        <p className="font-serif-italic text-sm sm:text-base text-[#D4AF37] tracking-wider">
-          {lang === "hi" ? "शुभ परिणय निमंत्रण" : "Royal Wedding Invitation"}
-        </p>
-
-        {/* Couple Names in Mozart Script */}
-        <h1 className="mt-1 font-script text-5xl sm:text-6xl md:text-7xl text-copper-gold-gradient py-2 overflow-visible leading-snug">
-          Vipul & Sejal
+        <h1 className="font-hindi-royal text-2xl sm:text-3xl md:text-4xl text-[#E6C97E] font-bold tracking-wider leading-snug drop-shadow-md">
+          {lang === "hi" ? "॥ स्नेह निमंत्रण पत्रिका ॥" : "Royal Wedding Invitation"}
         </h1>
 
-        {/* Interactive Royal Envelope & Emerging Card Container */}
+        <p className="font-serif-italic text-xs sm:text-sm text-[#D4AF37]/90 tracking-widest uppercase mt-1 mb-2">
+          {lang === "hi" ? "पावन परिणय उत्सव • पट्टी, प्रतापगढ़ (उ.प्र.)" : "A Sacred Royal Union • Pratapgarh"}
+        </p>
+
+        {/* Large, Hyper-Realistic Royal Envelope & Emerging Card Container */}
         <div
           onClick={handleEnvelopeClick}
-          className={`group relative mt-4 cursor-pointer select-none transition-transform duration-700 ${
-            isStarted ? "" : "hover:scale-[1.03] active:scale-98"
+          className={`group relative mt-4 cursor-pointer select-none transition-transform duration-700 w-[350px] sm:w-[480px] md:w-[540px] max-w-[94vw] h-[262px] sm:h-[360px] md:h-[405px] ${
+            isStarted ? "" : "hover:scale-[1.02] active:scale-98"
           }`}
-          style={{ width: "320px", height: "250px" }}
         >
-          {/* Pulsing golden aura glow behind envelope */}
-          <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-[#C9A24B] via-[#F5B82E] to-[#C9A24B] opacity-60 blur-xl group-hover:opacity-95 transition duration-1000 animate-pulse" />
+          {/* Ambient golden aura glow behind envelope */}
+          <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-[#C9A24B] via-[#F5B82E] to-[#C9A24B] opacity-40 blur-2xl group-hover:opacity-75 transition duration-1000 animate-pulse" />
 
           {/* ========================================================
-              THE INNER INVITATION CARD (Sliding smoothly UP out of the pocket!)
+              THE INNER INVITATION CARD (Surprise Reveal: Slides majestically UP!)
              ======================================================== */}
           <div
-            className={`absolute left-4 right-4 z-15 flex flex-col items-center justify-center rounded-t-[50px] rounded-b-xl border border-[#C9A24B] bg-gradient-to-b from-[#FFFDF9] to-[#FFF5E6] p-4 shadow-2xl transition-all duration-1000 ease-out ${
+            className={`absolute left-3 right-3 sm:left-6 sm:right-6 z-15 flex flex-col items-center justify-center rounded-t-[40px] sm:rounded-t-[50px] rounded-b-xl border-2 border-[#C9A24B] bg-gradient-to-b from-[#FFFDF9] via-[#FFF9EE] to-[#FFF3DC] p-4 sm:p-6 shadow-2xl transition-all duration-1000 ease-out ${
               isCardOut
-                ? "-translate-y-36 sm:-translate-y-44 scale-[1.08] shadow-[0_20px_50px_rgba(201,162,75,0.6)]"
-                : "translate-y-4 opacity-90 scale-95"
+                ? "-translate-y-40 sm:-translate-y-56 md:-translate-y-64 scale-[1.06] shadow-[0_25px_60px_rgba(201,162,75,0.7)]"
+                : "translate-y-4 opacity-90 scale-95 pointer-events-none"
             }`}
-            style={{ height: "220px", top: "10px" }}
+            style={{ height: "230px", top: "10px" }}
           >
             {/* Arch Top with Radha Krishna Icon & Titles */}
             <div className="flex flex-col items-center text-center">
-              <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-[#C9A24B] shadow-sm mb-1">
+              <div className="relative h-12 w-12 sm:h-16 sm:w-16 overflow-hidden rounded-full border-2 border-[#C9A24B] shadow-md mb-1.5">
                 <Image
                   src="/images/radha_krishna.jpg"
                   alt="राधा कृष्ण"
@@ -129,65 +127,44 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
                   className="object-cover"
                 />
               </div>
-              <span className="font-hindi-royal text-[11px] font-bold text-[#8C631F]">
+              <span className="font-hindi-royal text-[11px] sm:text-xs font-bold text-[#8C631F] tracking-wider">
                 ॥ श्री राधा-कृष्णाय नमः ॥
               </span>
-              <p className="font-script text-2xl sm:text-3xl text-copper-gold-gradient leading-tight mt-1">
+              {/* Couple Names in Mozart Script - The Surprise Unveiled! */}
+              <p className="font-script text-3xl sm:text-4xl md:text-5xl text-copper-gold-gradient leading-tight mt-1 py-1">
                 Vipul & Sejal
               </p>
-              <span className="font-numeral text-xs font-bold text-[#6E1F2E] mt-0.5">
-                11 • 12 • 2026
-              </span>
+              <div className="flex items-center space-x-2 text-xs sm:text-sm font-semibold text-[#6E1F2E] mt-0.5">
+                <span className="font-numeral tracking-wider font-bold">11 • 12 • 2026</span>
+                <span>•</span>
+                <span className="font-hindi-royal">पट्टी, प्रतापगढ़</span>
+              </div>
             </div>
           </div>
 
           {/* ========================================================
-              THE ENVELOPE BASE (Pocket Front)
+              THE REALISTIC ROYAL ENVELOPE BASE
              ======================================================== */}
-          <div className="relative z-20 h-full w-full overflow-hidden rounded-2xl border-2 border-[#E6C97E] bg-[#FFFBF4] shadow-2xl flex flex-col justify-between p-3">
-            
-            {/* Top Triangular Flap with 3D Rotate Open Effect */}
-            <div
-              className={`absolute top-0 left-0 right-0 h-1/2 origin-top border-b-2 border-[#E6C97E]/70 bg-gradient-to-b from-[#FFF5DE] to-[#FFFBF4] shadow-md transition-transform duration-700 ease-in-out ${
-                isStarted ? "-rotate-x-180 opacity-20 pointer-events-none" : "rotate-x-0 opacity-100"
-              }`}
-              style={{ transformStyle: "preserve-3d" }}
-            >
-              <div className="h-full w-full bg-[radial-gradient(#C9A24B_0.75px,transparent_0.75px)] [background-size:16px_16px] opacity-25" />
-            </div>
+          <div className="relative z-20 h-full w-full overflow-hidden rounded-2xl border-2 border-[#D4AF37]/70 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85),0_0_30px_rgba(201,162,75,0.3)] bg-[#FFFDF9]">
+            {/* Authentic Photorealistic Royal Silk Envelope with Embossed Gold Foil */}
+            <Image
+              src="/images/royal_envelope_clean.png"
+              alt="Royal Wedding Envelope"
+              fill
+              priority
+              className="object-cover object-center pointer-events-none select-none transition-transform duration-700 group-hover:scale-[1.01]"
+            />
 
-            {/* Corner Filigree Ornaments */}
-            <div className="absolute top-2 left-2 text-[#C9A24B] text-xs">✤</div>
-            <div className="absolute top-2 right-2 text-[#C9A24B] text-xs">✤</div>
-            <div className="absolute bottom-2 left-2 text-[#C9A24B] text-xs">✤</div>
-            <div className="absolute bottom-2 right-2 text-[#C9A24B] text-xs">✤</div>
+            {/* Subtle luxury light sheen reflection overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/15 pointer-events-none" />
 
-            {/* Center Royal Wax Seal Medallion */}
+            {/* Pulsing golden aura over the antique wax seal */}
             <div
-              className={`relative z-30 my-auto flex flex-col items-center transition-all duration-500 ${
-                isStarted ? "scale-125 opacity-0 pointer-events-none" : "group-hover:scale-105"
+              className={`absolute top-[47%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-25 pointer-events-none transition-all duration-500 ${
+                isStarted ? "scale-150 opacity-0" : "group-hover:scale-110"
               }`}
             >
-              <div className="relative flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center rounded-full border-3 border-[#FFE6A3] bg-gradient-to-br from-[#E6C97E] via-[#C9A24B] to-[#8C631F] shadow-2xl">
-                <div className="absolute inset-1.5 rounded-full border border-[#FFF0BA]/80" />
-                <div className="flex flex-col items-center justify-center text-[#3D1A22] text-center px-1">
-                  <span className="font-hindi-royal text-xs font-bold leading-tight">
-                    श्री
-                  </span>
-                  <span className="font-hindi-royal text-sm font-extrabold tracking-wider leading-tight">
-                    शुभ विवाह
-                  </span>
-                  <span className="font-numeral text-xs tracking-wider text-[#5C232F] font-bold mt-0.5">
-                    11.12.2026
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Pocket Banner */}
-            <div className="relative z-25 w-full flex items-center justify-between px-3 text-[11px] font-hindi-royal text-[#8C631F]">
-              <span>॥ वक्रतुण्डाय हुम् ॥</span>
-              <span>पट्टी, प्रतापगढ़</span>
+              <div className="h-16 w-16 sm:h-24 sm:w-24 rounded-full border border-[#FFF0BA]/60 animate-ping opacity-35" />
             </div>
           </div>
         </div>
@@ -195,15 +172,15 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
         {/* Tap Instruction Button */}
         <div
           onClick={handleEnvelopeClick}
-          className={`mt-6 flex cursor-pointer items-center space-x-2 rounded-full border border-[#E6C97E]/70 bg-[#3D141E]/80 px-5 py-2.5 shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-[#521C29] active:scale-95 ${
+          className={`mt-6 sm:mt-7 flex cursor-pointer items-center space-x-2.5 rounded-full border border-[#E6C97E]/80 bg-gradient-to-r from-[#4A1824]/90 via-[#6E1F2E]/90 to-[#4A1824]/90 px-6 py-2.5 sm:py-3 shadow-xl backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-[#FFE6A3] active:scale-95 ${
             isStarted ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
         >
           <Sparkles className="h-4 w-4 text-[#F5B82E] animate-spin" style={{ animationDuration: "6s" }} />
-          <span className="font-hindi-royal text-sm font-medium text-[#FFF4DE]">
+          <span className="font-hindi-royal text-sm sm:text-base font-semibold text-[#FFF5DE] tracking-wide">
             {lang === "hi"
-              ? "लिफाफे को स्पर्श कर निमंत्रण खोलें"
-              : "Tap the royal envelope to open"}
+              ? "शाही लिफाफा स्पर्श कर निमंत्रण खोलें"
+              : "Tap the royal envelope to reveal"}
           </span>
           <Sparkles className="h-4 w-4 text-[#F5B82E]" />
         </div>
