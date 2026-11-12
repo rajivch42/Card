@@ -84,12 +84,12 @@ export const invitationConfig: InvitationConfig = {
         en: "Vipul Chaurasiya",
       },
       parents: {
-        hi: "सुपुत्र: श्रीमती दुर्गादेवी चौरसिया एवं श्री सुरेश चौरसिया",
-        en: "Son of Smt. Durgadevi Chaurasiya & Shri Suresh Chaurasiya",
+        hi: "सुपुत्र: श्री सुरेश चौरसिया एवं श्रीमती दुर्गादेवी चौरसिया",
+        en: "Son of Shri Suresh Chaurasiya & Smt. Durgadevi Chaurasiya",
       },
       grandparents: {
-        hi: "पौत्र: श्रीमती मूर्तिदेवी एवं श्री सालिकराम चौरसिया",
-        en: "Grandson of Smt. Murtidevi & Shri Salikram Chaurasiya",
+        hi: "पौत्र: श्री सालिकराम चौरसिया एवं श्रीमती मूर्तिदेवी चौरसिया",
+        en: "Grandson of Shri Salikram Chaurasiya & Smt. Murtidevi Chaurasiya",
       },
     },
     bride: {

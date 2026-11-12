@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import confetti from "canvas-confetti";
 import { Sparkles, Heart } from "lucide-react";
 import { invitationConfig } from "@/config/invitation";
+import { ScrollReveal } from "@/hooks/useScrollAnimation";
 
 interface SaveTheDateProps {
   lang: "hi" | "en";
@@ -40,7 +41,6 @@ function ScratchHeartItem({ label, value, isRevealed, onReveal }: ScratchHeartIt
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, width, height);
 
-      // Add "SCRATCH / खरोंचें" label
       ctx.fillStyle = "#3D141E";
       ctx.font = "bold 11px Cinzel, serif";
       ctx.textAlign = "center";
@@ -116,12 +116,12 @@ function ScratchHeartItem({ label, value, isRevealed, onReveal }: ScratchHeartIt
         onClick={onReveal}
         className="relative flex h-28 w-28 items-center justify-center cursor-pointer select-none rounded-2xl border-2 border-[#C9A24B] bg-gradient-to-br from-[#FFF5DE] via-[#FFF9EE] to-[#FFEEDB] shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 active:scale-95"
       >
-        {/* Underlying revealed numeral with sculptural Playfair font */}
+        {/* Underlying revealed numeral */}
         <div className="flex flex-col items-center justify-center p-2 text-center">
           <span className="font-numeral text-4xl sm:text-5xl font-extrabold text-copper-gold-gradient drop-shadow-sm leading-none">
             {value}
           </span>
-          <span className="font-hindi-royal text-[11px] font-semibold text-[#8C631F] mt-1">
+          <span className="font-hindi-royal text-xs sm:text-sm font-semibold text-[#8C631F] mt-1">
             {label}
           </span>
         </div>
@@ -141,7 +141,7 @@ function ScratchHeartItem({ label, value, isRevealed, onReveal }: ScratchHeartIt
       <button
         type="button"
         onClick={onReveal}
-        className="mt-2 font-serif-italic text-xs text-[#8C631F] underline decoration-dotted hover:text-[#6E1F2E]"
+        className="mt-2 font-serif-italic text-sm text-[#8C631F] underline decoration-dotted hover:text-[#6E1F2E]"
       >
         {isRevealed ? "प्रकट (Revealed)" : "टैप करें (Tap to reveal)"}
       </button>
@@ -211,79 +211,84 @@ export default function SaveTheDate({ lang }: SaveTheDateProps) {
 
   return (
     <section className="relative z-20 mx-auto w-full max-w-xl px-4 py-8">
-      <div className="rounded-3xl border-2 border-[#C9A24B]/40 bg-[#FFFDF9]/95 p-6 sm:p-8 shadow-xl backdrop-blur-md text-center">
-        
-        {/* Section Header */}
-        <div className="flex items-center justify-center space-x-2 text-[#C9A24B]">
-          <span className="h-px w-8 bg-[#C9A24B]" />
-          <Heart className="h-4 w-4 fill-[#6E1F2E] text-[#6E1F2E]" />
-          <span className="h-px w-8 bg-[#C9A24B]" />
-        </div>
+      <ScrollReveal animation="fade-up">
+        <div className="rounded-t-[80px] rounded-b-3xl border-2 border-[#C9A24B] bg-[#FFFDF9]/95 p-6 sm:p-8 shadow-xl backdrop-blur-md text-center">
+          {/* Inner decorative border */}
+          <div className="pointer-events-none absolute inset-1.5 rounded-t-[72px] rounded-b-[18px] border border-[#E6C97E]/30" />
 
-        <h3 className="mt-2 font-hindi-royal text-2xl sm:text-3xl font-extrabold text-[#6E1F2E]">
-          {lang === "hi" ? "शुभ लग्न तिथि" : "Save The Auspicious Date"}
-        </h3>
-        <p className="mt-1 font-serif-italic text-xs sm:text-sm text-[#735A53]">
-          {lang === "hi"
-            ? "पावन विवाह तिथि प्रकट करने हेतु खरोंचें अथवा टैप करें"
-            : "Scratch or tap each heart to reveal the wedding date"}
-        </p>
-
-        {/* 3 Scratchable Heart Cards */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-          <ScratchHeartItem
-            label={labels[0]}
-            value={saveTheDate.reveals[0]}
-            isRevealed={revealed[0]}
-            onReveal={() => handleReveal(0)}
-          />
-          <ScratchHeartItem
-            label={labels[1]}
-            value={saveTheDate.reveals[1]}
-            isRevealed={revealed[1]}
-            onReveal={() => handleReveal(1)}
-          />
-          <ScratchHeartItem
-            label={labels[2]}
-            value={saveTheDate.reveals[2]}
-            isRevealed={revealed[2]}
-            onReveal={() => handleReveal(2)}
-          />
-        </div>
-
-        {/* Live Countdown Timer with Classic Sculptural Numerals */}
-        <div className="mt-8 border-t border-[#E6C97E]/40 pt-6">
-          <div className="flex items-center justify-center space-x-1.5 text-xs font-semibold text-[#8C631F]">
-            <Sparkles className="h-3.5 w-3.5 text-[#C9A24B]" />
-            <span className="font-hindi-royal">
-              {lang === "hi" ? "विवाह मुहूर्त तक शेष समय" : "Countdown to Auspicious Ceremony"}
-            </span>
-            <Sparkles className="h-3.5 w-3.5 text-[#C9A24B]" />
+          {/* Section Header */}
+          <div className="flex items-center justify-center space-x-2 text-[#C9A24B] mt-4">
+            <span className="h-px w-8 bg-[#C9A24B]" />
+            <Heart className="h-4 w-4 fill-[#6E1F2E] text-[#6E1F2E]" />
+            <span className="h-px w-8 bg-[#C9A24B]" />
           </div>
 
-          <div className="mt-4 grid grid-cols-4 gap-2 sm:gap-3">
-            {[
-              { val: timeLeft.days, label: lang === "hi" ? "दिन" : "Days" },
-              { val: timeLeft.hours, label: lang === "hi" ? "घंटे" : "Hours" },
-              { val: timeLeft.minutes, label: lang === "hi" ? "मिनट" : "Mins" },
-              { val: timeLeft.seconds, label: lang === "hi" ? "सेकंड" : "Secs" },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center rounded-xl border border-[#C9A24B]/40 bg-gradient-to-b from-[#FFF5DE] to-[#FFFBF4] p-2.5 sm:p-3 shadow-md"
-              >
-                <span className="font-numeral text-2xl sm:text-3xl font-extrabold text-[#6E1F2E] leading-tight">
-                  {String(item.val).padStart(2, "0")}
+          <h3 className="mt-2 font-hindi-royal text-2xl sm:text-3xl font-extrabold text-[#6E1F2E]">
+            {lang === "hi" ? "शुभ लग्न तिथि" : "Save The Auspicious Date"}
+          </h3>
+          <p className="mt-1.5 font-serif-italic text-sm sm:text-base text-[#735A53]">
+            {lang === "hi"
+              ? "पावन विवाह तिथि प्रकट करने हेतु खरोंचें अथवा टैप करें"
+              : "Scratch or tap each heart to reveal the wedding date"}
+          </p>
+
+          {/* 3 Scratchable Heart Cards */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <ScratchHeartItem
+              label={labels[0]}
+              value={saveTheDate.reveals[0]}
+              isRevealed={revealed[0]}
+              onReveal={() => handleReveal(0)}
+            />
+            <ScratchHeartItem
+              label={labels[1]}
+              value={saveTheDate.reveals[1]}
+              isRevealed={revealed[1]}
+              onReveal={() => handleReveal(1)}
+            />
+            <ScratchHeartItem
+              label={labels[2]}
+              value={saveTheDate.reveals[2]}
+              isRevealed={revealed[2]}
+              onReveal={() => handleReveal(2)}
+            />
+          </div>
+
+          {/* Live Countdown Timer */}
+          <ScrollReveal animation="fade-up" delay={200}>
+            <div className="mt-8 border-t border-[#E6C97E]/40 pt-6">
+              <div className="flex items-center justify-center space-x-1.5 text-sm font-semibold text-[#8C631F]">
+                <Sparkles className="h-3.5 w-3.5 text-[#C9A24B]" />
+                <span className="font-hindi-royal">
+                  {lang === "hi" ? "विवाह मुहूर्त तक शेष समय" : "Countdown to Auspicious Ceremony"}
                 </span>
-                <span className="font-hindi-royal text-[10px] sm:text-xs font-semibold text-[#8C631F] mt-0.5">
-                  {item.label}
-                </span>
+                <Sparkles className="h-3.5 w-3.5 text-[#C9A24B]" />
               </div>
-            ))}
-          </div>
-        </div>
 
-      </div>
+              <div className="mt-4 grid grid-cols-4 gap-2 sm:gap-3">
+                {[
+                  { val: timeLeft.days, label: lang === "hi" ? "दिन" : "Days" },
+                  { val: timeLeft.hours, label: lang === "hi" ? "घंटे" : "Hours" },
+                  { val: timeLeft.minutes, label: lang === "hi" ? "मिनट" : "Mins" },
+                  { val: timeLeft.seconds, label: lang === "hi" ? "सेकंड" : "Secs" },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex flex-col items-center rounded-xl border border-[#C9A24B]/40 bg-gradient-to-b from-[#FFF5DE] to-[#FFFBF4] p-2.5 sm:p-3 shadow-md"
+                  >
+                    <span className="font-numeral text-2xl sm:text-3xl font-extrabold text-[#6E1F2E] leading-tight">
+                      {String(item.val).padStart(2, "0")}
+                    </span>
+                    <span className="font-hindi-royal text-xs sm:text-sm font-semibold text-[#8C631F] mt-0.5">
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </ScrollReveal>
     </section>
   );
 }

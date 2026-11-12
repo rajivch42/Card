@@ -92,7 +92,7 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
           {lang === "hi" ? "॥ स्नेह निमंत्रण पत्रिका ॥" : "Royal Wedding Invitation"}
         </h1>
 
-        <p className="font-serif-italic text-xs sm:text-sm text-[#D4AF37]/90 tracking-widest uppercase mt-1 mb-2">
+        <p className="font-serif-italic text-sm sm:text-base text-[#FFE6A3] tracking-widest uppercase mt-1 mb-2">
           {lang === "hi" ? "पावन परिणय उत्सव • पट्टी, प्रतापगढ़ (उ.प्र.)" : "A Sacred Royal Union • Pratapgarh"}
         </p>
 
@@ -127,8 +127,8 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
                   className="object-cover"
                 />
               </div>
-              <span className="font-hindi-royal text-[11px] sm:text-xs font-bold text-[#8C631F] tracking-wider">
-                ॥ श्री राधा-कृष्णाय नमः ॥
+              <span className="font-hindi-royal text-xs sm:text-sm font-bold text-[#8C631F] tracking-wider">
+                ॥ श्री राधाकृष्णाभ्यां नमः ॥
               </span>
               {/* Couple Names in Mozart Script - The Surprise Unveiled! */}
               <p className="font-script text-3xl sm:text-4xl md:text-5xl text-copper-gold-gradient leading-tight mt-1 py-1">
@@ -177,7 +177,7 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
           }`}
         >
           <Sparkles className="h-4 w-4 text-[#F5B82E] animate-spin" style={{ animationDuration: "6s" }} />
-          <span className="font-hindi-royal text-sm sm:text-base font-semibold text-[#FFF5DE] tracking-wide">
+          <span className="font-hindi-royal text-base sm:text-lg font-semibold text-[#FFF5DE] tracking-wide">
             {lang === "hi"
               ? "शाही लिफाफा स्पर्श कर निमंत्रण खोलें"
               : "Tap the royal envelope to reveal"}
