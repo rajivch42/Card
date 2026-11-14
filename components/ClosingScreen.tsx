@@ -5,6 +5,7 @@ import { Heart, Sparkles } from "lucide-react";
 import { invitationConfig } from "@/config/invitation";
 import { ScrollReveal } from "@/hooks/useScrollAnimation";
 import KalashMotif from "./motifs/KalashMotif";
+import WhatsAppShareButton from "./WhatsAppShareButton";
 
 interface ClosingScreenProps {
   lang: "hi" | "en";
@@ -96,6 +97,11 @@ export default function ClosingScreen({ lang }: ClosingScreenProps) {
               <span>•</span>
               <span className="font-hindi-royal">पट्टी, प्रतापगढ़</span>
               <Sparkles className="h-3 w-3" />
+            </div>
+
+            {/* Option A: Primary WhatsApp Share Button */}
+            <div className="mt-7 flex justify-center">
+              <WhatsAppShareButton lang={lang} />
             </div>
           </div>
         </ScrollReveal>
