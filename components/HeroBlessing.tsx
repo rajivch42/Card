@@ -497,12 +497,12 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
                   </p>
                 </ScrollReveal>
 
-                {/* ── 4. "पावन परिणय सूत्र" CUSPED PILL LABEL ── */}
+                {/* ── 4. "पावन परिणय सूत्र" / "The Wedding of" CUSPED PILL LABEL ── */}
                 <ScrollReveal animation="fade-up" delay={400} duration={600}>
                   <div className="mt-6 flex justify-center">
                     <CuspedPill>
                       <span className="font-hindi-royal text-[15px] sm:text-base font-bold text-[#7A0F1F] tracking-wider">
-                        {lang === "hi" ? "पावन परिणय सूत्र" : "celebration of"}
+                        {lang === "hi" ? "पावन परिणय सूत्र" : "The Wedding of"}
                       </span>
                     </CuspedPill>
                   </div>

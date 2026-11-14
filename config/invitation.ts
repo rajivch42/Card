@@ -98,12 +98,12 @@ export const invitationConfig: InvitationConfig = {
         en: "Sejal Chaurasia",
       },
       parents: {
-        hi: "सुपुत्री: श्रीमती एवं श्री चौरसिया",
-        en: "Daughter of Smt. & Shri Chaurasia",
+        hi: "सुपुत्री: श्री रमेश चौरसिया",
+        en: "Daughter of Shri Ramesh Chaurasiya",
       },
       grandparents: {
-        hi: "पौत्री: दादी-दादा चौरसिया परिवार",
-        en: "Granddaughter of Chaurasia Family Elders",
+        hi: "पौत्री: स्वर्गीय श्री रामशिरोमणि चौरसिया",
+        en: "Granddaughter of Late Shri Ramshiromani Chaurasiya",
       },
     },
     monogram: "V ♥ S",

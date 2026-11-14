@@ -83,7 +83,7 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
         <div className="mb-2 flex items-center space-x-3 text-[#E6C97E]">
           <span className="h-px w-8 sm:w-14 bg-gradient-to-r from-transparent via-[#E6C97E] to-[#C9A24B]" />
           <span className="font-hindi-royal text-base sm:text-xl tracking-widest font-bold text-[#FFE6A3] drop-shadow-md">
-            {lang === "hi" ? "॥ श्री गणेशाय नमः ॥" : "|| Shree Ganeshay Namah ||"}
+            ॥ श्री गणेशाय नमः ॥
           </span>
           <span className="h-px w-8 sm:w-14 bg-gradient-to-l from-transparent via-[#E6C97E] to-[#C9A24B]" />
         </div>
