@@ -1,21 +1,36 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { invitationConfig } from "@/config/invitation";
+
+const { couple, city, state } = invitationConfig;
+const groomFirst = couple.groom.name.en.split(" ")[0]; // Vipul
+const brideFirst = couple.bride.name.en.split(" ")[0]; // Sejal
+const location = `${city.en} • ${state.en}`;
+
+const shareTitle = `${brideFirst} & ${groomFirst} | 11 December 2026 | ${location}`;
+const shareDescription = `You're invited to celebrate the wedding of ${brideFirst} & ${groomFirst} on 11 December 2026 at ${location}. View the complete invitation, explore the wedding events, and RSVP on our website.`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://wedding-invitation-vipul-sejal.vercel.app"),
-  title: "विपुल संग सेजल — पावन परिणय सूत्र (11 दिसंबर 2026)",
-  description: "विपुल चौरसिया एवं सेजल चौरसिया के पावन विवाह समारोह का स्नेह निमंत्रण — पट्टी, प्रतापगढ़ (उत्तर प्रदेश)",
+  metadataBase: new URL("https://card-omega-amber.vercel.app"),
+  title: shareTitle,
+  description: shareDescription,
+  applicationName: `${brideFirst} & ${groomFirst} Wedding`,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "विपुल संग सेजल — शुभ विवाह निमंत्रण पत्र",
-    description: "11 दिसंबर 2026 | पट्टी, प्रतापगढ़, उत्तर प्रदेश",
-    images: [
-      {
-        url: "/images/radha_krishna.jpg",
-        width: 1200,
-        height: 1200,
-        alt: "विपुल एवं सेजल शुभ विवाह",
-      },
-    ],
+    title: shareTitle,
+    description: shareDescription,
+    url: "https://card-omega-amber.vercel.app",
+    siteName: `${brideFirst} & ${groomFirst} Wedding Invitation`,
+    type: "website",
+    locale: "en_US",
+    alternateLocale: "hi_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: shareTitle,
+    description: shareDescription,
   },
 };
 
@@ -25,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="hi" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
