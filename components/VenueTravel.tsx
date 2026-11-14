@@ -62,7 +62,7 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
           <div className="p-6 sm:p-8 space-y-6">
 
             {/* ── Ceremony Schedule Summary ── */}
-            <div className="rounded-2xl border border-[#C9A24B]/50 bg-gradient-to-b from-[#FFF9EE] to-[#FFFDF9] p-4 sm:p-5">
+            <div className="rounded-2xl border border-[#C9A24B]/50 bg-gradient-to-b from-[#FFF9EE] to-[#FFFDF9] p-3 sm:p-5">
               <div className="flex items-center space-x-2 mb-3">
                 <Clock className="h-4 w-4 text-[#6E1F2E]" />
                 <h5 className="font-hindi-royal text-sm sm:text-base font-bold text-[#6E1F2E]">
@@ -73,18 +73,20 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
                 {scheduleRows.map((row) => (
                   <div
                     key={row.key}
-                    className="flex items-center space-x-3 rounded-xl bg-white/70 border border-[#E6C97E]/30 px-3 py-2.5 sm:py-3"
+                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3 rounded-xl bg-white/70 border border-[#E6C97E]/30 px-3 py-2.5 sm:py-3"
                   >
-                    <span className="text-lg shrink-0">{row.icon}</span>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-hindi-royal text-sm sm:text-base font-bold text-[#6E1F2E] truncate">
-                        {row.name}
-                      </p>
-                      <p className="font-serif-luxury text-xs sm:text-sm text-[#5C4033]">
-                        {row.date}
-                      </p>
+                    <div className="flex items-start sm:items-center space-x-2.5 min-w-0">
+                      <span className="text-lg shrink-0 mt-0.5 sm:mt-0">{row.icon}</span>
+                      <div className="min-w-0">
+                        <p className="font-hindi-royal text-sm sm:text-base font-bold text-[#6E1F2E] break-words">
+                          {row.name}
+                        </p>
+                        <p className="font-serif-luxury text-xs sm:text-sm text-[#5C4033]">
+                          {row.date}
+                        </p>
+                      </div>
                     </div>
-                    <span className="font-numeral text-xs sm:text-sm font-bold text-[#C9A24B] shrink-0 text-right">
+                    <span className="font-numeral text-xs sm:text-sm font-bold text-[#C9A24B] sm:shrink-0 pl-7 sm:pl-0 text-left sm:text-right">
                       {row.time.replace("से", "").replace("onwards", "").trim()}
                     </span>
                   </div>
