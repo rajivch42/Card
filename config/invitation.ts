@@ -68,7 +68,7 @@ export interface InvitationConfig {
 
 export const invitationConfig: InvitationConfig = {
   theme: "awadhi",
-  defaultLang: "hi",
+  defaultLang: "en",
   city: {
     hi: "पट्टी, प्रतापगढ़",
     en: "Patti, Pratapgarh",

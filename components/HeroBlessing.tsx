@@ -334,25 +334,7 @@ function CuspedPill({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Bottom corner flower clusters — AI-generated watercolor illustration */
-function FlowerCluster({ flip = false }: { flip?: boolean }) {
-  return (
-    <div
-      className={`select-none pointer-events-none ${flip ? "scale-x-[-1]" : ""}`}
-      aria-hidden="true"
-      style={{ width: 140, height: 140 }}
-    >
-      <Image
-        src="/images/flower_corner.jpg"
-        alt=""
-        width={140}
-        height={140}
-        className="object-contain"
-        style={{ mixBlendMode: "multiply", filter: "saturate(1.1) contrast(1.05)" }}
-      />
-    </div>
-  );
-}
+
 
 
 /* ═══════════════════════════════════════════════════════════════
@@ -362,7 +344,7 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
   const { couple, blessing, city, state } = invitationConfig;
 
   return (
-    <section className="relative z-20 mx-auto w-full max-w-xl px-3 sm:px-4 pt-16 pb-8">
+    <section className="relative z-20 mx-auto w-full max-w-xl px-2 sm:px-4 pt-16 pb-8 overflow-hidden">
       <ScrollReveal animation="scale-up" duration={900}>
         {/* ── OUTER CARD ── double gold border, arched top, cream bg with paisley texture */}
         <div
@@ -378,9 +360,8 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
           <div
             style={{
               borderRadius: "47% 47% 22px 22px / 136px 136px 22px 22px",
-              padding: "8px",
+              padding: "6px sm:padding: 8px",
               background: "#FFF8EC",
-              overflow: "visible",
             }}
           >
             {/* ── INNER CARD ── thick inner gold border */}
@@ -404,15 +385,15 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
               />
 
               {/* ── FILIGREE CORNERS ── */}
-              <div className="absolute top-6 left-2 z-10 opacity-60">
+              <div className="absolute top-6 left-1 sm:left-2 z-10 opacity-60 pointer-events-none">
                 <FiligreeCorner />
               </div>
-              <div className="absolute top-6 right-2 z-10 opacity-60">
+              <div className="absolute top-6 right-1 sm:right-2 z-10 opacity-60 pointer-events-none">
                 <FiligreeCorner flip />
               </div>
 
               {/* ── CONTENT ── */}
-              <div className="relative z-20 px-5 sm:px-8 pt-4 pb-6">
+              <div className="relative z-20 px-3 sm:px-8 pt-4 pb-6">
 
                 {/* ── 1. TORAN ── */}
                 <div className="flex justify-center -mt-1 mb-1">
@@ -531,13 +512,13 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
                 <ScrollReveal animation="fade-up" delay={500} duration={600}>
                   <div className="mt-5 text-center">
                     {/* Devanagari name */}
-                    <h2 className="font-hindi-royal text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#7A0F1F] tracking-wide leading-tight">
+                    <h2 className="font-hindi-royal text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#7A0F1F] tracking-wide leading-tight break-words">
                       {couple.groom.name[lang]}
                     </h2>
 
                     {/* English script name */}
                     <div className="flex items-center justify-center my-1 overflow-visible">
-                      <p className="font-script text-5xl sm:text-6xl md:text-7xl hero-gold-shimmer py-1 overflow-visible leading-tight">
+                      <p className="font-script text-4xl sm:text-6xl md:text-7xl hero-gold-shimmer py-1 overflow-visible leading-tight">
                         Vipul
                       </p>
                     </div>
@@ -559,12 +540,12 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
                 {/* ── BRIDE NAME BLOCK ── */}
                 <ScrollReveal animation="fade-up" delay={600} duration={600}>
                   <div className="text-center">
-                    <h2 className="font-hindi-royal text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#7A0F1F] tracking-wide leading-tight">
+                    <h2 className="font-hindi-royal text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#7A0F1F] tracking-wide leading-tight break-words">
                       {couple.bride.name[lang]}
                     </h2>
 
                     <div className="flex items-center justify-center my-1 overflow-visible">
-                      <p className="font-script text-5xl sm:text-6xl md:text-7xl hero-gold-shimmer py-1 overflow-visible leading-tight">
+                      <p className="font-script text-4xl sm:text-6xl md:text-7xl hero-gold-shimmer py-1 overflow-visible leading-tight">
                         Sejal
                       </p>
                     </div>
@@ -590,14 +571,6 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
                     </CuspedPill>
                   </div>
                 </ScrollReveal>
-              </div>
-
-              {/* ── BOTTOM CORNER FLOWER CLUSTERS ── */}
-              <div className="absolute -bottom-4 -left-4 z-30">
-                <FlowerCluster />
-              </div>
-              <div className="absolute -bottom-4 -right-4 z-30">
-                <FlowerCluster flip />
               </div>
 
             </div>

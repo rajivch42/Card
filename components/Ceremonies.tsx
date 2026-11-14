@@ -27,11 +27,11 @@ function TimelineCard({
   const isLast = index === total - 1;
 
   return (
-    <div className="relative pl-12 sm:pl-14 pb-10">
+    <div className="relative pl-6 sm:pl-8 pb-10">
       {/* Timeline vertical connector line */}
       {!isLast && (
         <div
-          className="absolute left-[19px] sm:left-[23px] top-5 bottom-0 w-0.5"
+          className="absolute left-[9px] sm:left-[11px] top-5 bottom-0 w-0.5"
           style={{
             background:
               "linear-gradient(to bottom, #C9A24B, #E6C97E, #C9A24B)",
@@ -40,18 +40,8 @@ function TimelineCard({
       )}
 
       {/* Timeline dot */}
-      <div className="absolute left-[10px] sm:left-[14px] top-3 z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#C9A24B] bg-[#6E1F2E] shadow-md">
+      <div className="absolute left-0 sm:left-[2px] top-3 z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#C9A24B] bg-[#6E1F2E] shadow-md">
         <span className="h-2 w-2 rounded-full bg-[#E6C97E]" />
-      </div>
-
-      {/* Date label on timeline */}
-      <div className="absolute left-0 top-10 flex flex-col items-center text-center" style={{ width: '40px' }}>
-        <span className="font-numeral text-sm font-extrabold text-[#6E1F2E] leading-none">
-          {event.key === "havan" ? "9" : event.key === "haldi" ? "10" : "11"}
-        </span>
-        <span className="font-hindi-royal text-[9px] text-[#8C631F] leading-tight mt-0.5">
-          {lang === "hi" ? "दिसं" : "Dec"}
-        </span>
       </div>
 
       {/* The ceremony card itself */}

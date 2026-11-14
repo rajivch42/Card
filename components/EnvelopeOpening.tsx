@@ -79,21 +79,21 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
       </div>
 
       <div className="relative z-10 flex flex-col items-center max-w-lg text-center">
-        {/* Sacred Invocation & Mystery Invitation Header (NO names on cover for surprise factor) */}
+        {/* Sacred Invocation & Mystery Invitation Header */}
         <div className="mb-2 flex items-center space-x-3 text-[#E6C97E]">
           <span className="h-px w-8 sm:w-14 bg-gradient-to-r from-transparent via-[#E6C97E] to-[#C9A24B]" />
           <span className="font-hindi-royal text-base sm:text-xl tracking-widest font-bold text-[#FFE6A3] drop-shadow-md">
-            ॥ श्री गणेशाय नमः ॥
+            {lang === "hi" ? "॥ श्री गणेशाय नमः ॥" : "|| Shree Ganeshay Namah ||"}
           </span>
           <span className="h-px w-8 sm:w-14 bg-gradient-to-l from-transparent via-[#E6C97E] to-[#C9A24B]" />
         </div>
 
         <h1 className="font-hindi-royal text-2xl sm:text-3xl md:text-4xl text-[#E6C97E] font-bold tracking-wider leading-snug drop-shadow-md">
-          {lang === "hi" ? "॥ स्नेह निमंत्रण पत्रिका ॥" : "Royal Wedding Invitation"}
+          {lang === "hi" ? "॥ स्नेह निमंत्रण पत्रिका ॥" : "Wedding Invitation"}
         </h1>
 
         <p className="font-serif-italic text-sm sm:text-base text-[#FFE6A3] tracking-widest uppercase mt-1 mb-2">
-          {lang === "hi" ? "पावन परिणय उत्सव • पट्टी, प्रतापगढ़ (उ.प्र.)" : "A Sacred Royal Union • Pratapgarh"}
+          {lang === "hi" ? "पावन परिणय उत्सव • पट्टी, प्रतापगढ़ (उ.प्र.)" : "Sacred Wedding Ceremony • Patti, Pratapgarh (U.P.)"}
         </p>
 
         {/* Large, Hyper-Realistic Royal Envelope & Emerging Card Container */}
@@ -128,7 +128,7 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
                 />
               </div>
               <span className="font-hindi-royal text-xs sm:text-sm font-bold text-[#8C631F] tracking-wider">
-                ॥ श्री राधाकृष्णाभ्यां नमः ॥
+                {lang === "hi" ? "॥ श्री राधाकृष्णाभ्यां नमः ॥" : "|| Shree Radhakrishnabhyam Namah ||"}
               </span>
               {/* Couple Names in Mozart Script - The Surprise Unveiled! */}
               <p className="font-script text-3xl sm:text-4xl md:text-5xl text-copper-gold-gradient leading-tight mt-1 py-1">
@@ -137,7 +137,7 @@ export default function EnvelopeOpening({ onOpen, lang }: EnvelopeOpeningProps) 
               <div className="flex items-center space-x-2 text-xs sm:text-sm font-semibold text-[#6E1F2E] mt-0.5">
                 <span className="font-numeral tracking-wider font-bold">11 • 12 • 2026</span>
                 <span>•</span>
-                <span className="font-hindi-royal">पट्टी, प्रतापगढ़</span>
+                <span className="font-hindi-royal">{lang === "hi" ? "पट्टी, प्रतापगढ़" : "Patti, Pratapgarh"}</span>
               </div>
             </div>
           </div>

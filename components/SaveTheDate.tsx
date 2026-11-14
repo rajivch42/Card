@@ -13,11 +13,12 @@ interface SaveTheDateProps {
 interface ScratchHeartItemProps {
   label: string;
   value: string;
+  lang: "hi" | "en";
   isRevealed: boolean;
   onReveal: () => void;
 }
 
-function ScratchHeartItem({ label, value, isRevealed, onReveal }: ScratchHeartItemProps) {
+function ScratchHeartItem({ label, value, lang, isRevealed, onReveal }: ScratchHeartItemProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const isDrawing = useRef(false);
 
@@ -45,10 +46,10 @@ function ScratchHeartItem({ label, value, isRevealed, onReveal }: ScratchHeartIt
       ctx.font = "bold 11px Cinzel, serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText("SCRATCH", width / 2, height / 2 - 8);
+      ctx.fillText(lang === "hi" ? "SCRATCH" : "SCRATCH", width / 2, height / 2 - 8);
 
       ctx.font = "bold 11px 'Tiro Devanagari Hindi', serif";
-      ctx.fillText("खरोंचें", width / 2, height / 2 + 10);
+      ctx.fillText(lang === "hi" ? "खरोंचें" : "OR TAP", width / 2, height / 2 + 10);
     };
 
     if (!isRevealed) {
@@ -237,18 +238,21 @@ export default function SaveTheDate({ lang }: SaveTheDateProps) {
             <ScratchHeartItem
               label={labels[0]}
               value={saveTheDate.reveals[0]}
+              lang={lang}
               isRevealed={revealed[0]}
               onReveal={() => handleReveal(0)}
             />
             <ScratchHeartItem
               label={labels[1]}
               value={saveTheDate.reveals[1]}
+              lang={lang}
               isRevealed={revealed[1]}
               onReveal={() => handleReveal(1)}
             />
             <ScratchHeartItem
               label={labels[2]}
               value={saveTheDate.reveals[2]}
+              lang={lang}
               isRevealed={revealed[2]}
               onReveal={() => handleReveal(2)}
             />
