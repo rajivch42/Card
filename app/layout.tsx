@@ -7,14 +7,14 @@ const groomFirst = couple.groom.name.en.split(" ")[0]; // Vipul
 const brideFirst = couple.bride.name.en.split(" ")[0]; // Sejal
 const location = `${city.en} • ${state.en}`;
 
-const shareTitle = `${brideFirst} & ${groomFirst} | 11 December 2026 | ${location}`;
-const shareDescription = `You're invited to celebrate the wedding of ${brideFirst} & ${groomFirst} on 11 December 2026 at ${location}. View the complete invitation, explore the wedding events, and RSVP on our website.`;
+const shareTitle = `${groomFirst} & ${brideFirst} | 11 December 2026 | ${location}`;
+const shareDescription = `You're invited to celebrate the wedding of ${groomFirst} & ${brideFirst} on 11 December 2026 at ${location}. View the complete invitation, explore the wedding events, and RSVP on our website.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://card-omega-amber.vercel.app"),
   title: shareTitle,
   description: shareDescription,
-  applicationName: `${brideFirst} & ${groomFirst} Wedding`,
+  applicationName: `${groomFirst} & ${brideFirst} Wedding`,
   alternates: {
     canonical: "/",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: shareTitle,
     description: shareDescription,
     url: "https://card-omega-amber.vercel.app",
-    siteName: `${brideFirst} & ${groomFirst} Wedding Invitation`,
+    siteName: `${groomFirst} & ${brideFirst} Wedding Invitation`,
     type: "website",
     locale: "en_US",
     alternateLocale: "hi_IN",

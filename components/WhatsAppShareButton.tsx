@@ -32,8 +32,8 @@ export default function WhatsAppShareButton({
         ? window.location.origin
         : "https://card-omega-amber.vercel.app";
 
-    // Dynamic invitation caption per Option A requirements
-    const caption = `💍 ${brideFirst} & ${groomFirst}
+    // Dynamic invitation caption per requirements: Boys side, so "Vipul & Sejal"
+    const caption = `💍 ${groomFirst} & ${brideFirst}
 
 With immense joy, we invite you to celebrate our wedding!
 
@@ -50,7 +50,7 @@ ${invitationUrl}`;
       const coverImagePath = "/images/radha_krishna.jpg";
       const response = await fetch(coverImagePath);
       const blob = await response.blob();
-      const file = new File([blob], `${brideFirst}-${groomFirst}-Wedding-Invitation.jpg`, {
+      const file = new File([blob], `${groomFirst}-${brideFirst}-Wedding-Invitation.jpg`, {
         type: blob.type || "image/jpeg",
       });
 
@@ -67,7 +67,7 @@ ${invitationUrl}`;
       } else if (typeof navigator !== "undefined" && navigator.share) {
         // Fallback: Web Share without files
         await navigator.share({
-          title: `${brideFirst} & ${groomFirst} Wedding Invitation`,
+          title: `${groomFirst} & ${brideFirst} Wedding Invitation`,
           text: caption,
           url: invitationUrl,
         });

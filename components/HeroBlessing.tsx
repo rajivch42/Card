@@ -473,7 +473,7 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
                         <p className="font-hindi-shloka text-base sm:text-lg font-bold leading-relaxed text-[#7A0F1F] whitespace-pre-line px-6">
                           {blessing.shloka}
                         </p>
-                        <p className="mt-2.5 font-serif-italic text-[15px] sm:text-base text-[#5C4033] leading-relaxed px-4">
+                        <p className="mt-2.5 font-serif-italic text-[15px] sm:text-base font-semibold text-[#4A2E2B] leading-relaxed px-4">
                           {blessing.shlokaMeaning[lang]}
                         </p>
 
@@ -524,11 +524,11 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
                     </div>
 
                     {/* Parents */}
-                    <p className="mt-1 font-serif-luxury text-[15px] sm:text-base font-semibold text-[#7A0F1F] leading-relaxed">
+                    <p className="mt-1 font-serif-luxury text-[15px] sm:text-base font-bold text-[#7A0F1F] leading-relaxed">
                       {couple.groom.parents[lang]}
                     </p>
                     {/* Grandparents */}
-                    <p className="mt-0.5 font-serif-italic text-[15px] sm:text-base text-[#6D5248] leading-normal">
+                    <p className="mt-0.5 font-serif-italic text-[15px] sm:text-base font-semibold text-[#4A2E2B] leading-normal">
                       ({couple.groom.grandparents[lang]})
                     </p>
                   </div>
@@ -550,10 +550,10 @@ export default function HeroBlessing({ lang }: HeroBlessingProps) {
                       </p>
                     </div>
 
-                    <p className="mt-1 font-serif-luxury text-[15px] sm:text-base font-semibold text-[#7A0F1F] leading-relaxed">
+                    <p className="mt-1 font-serif-luxury text-[15px] sm:text-base font-bold text-[#7A0F1F] leading-relaxed">
                       {couple.bride.parents[lang]}
                     </p>
-                    <p className="mt-0.5 font-serif-italic text-[15px] sm:text-base text-[#6D5248] leading-normal">
+                    <p className="mt-0.5 font-serif-italic text-[15px] sm:text-base font-semibold text-[#4A2E2B] leading-normal">
                       ({couple.bride.grandparents[lang]})
                     </p>
                   </div>

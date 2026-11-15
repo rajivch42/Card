@@ -126,7 +126,7 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
             <div className="space-y-4">
 
               {/* Railway Station */}
-              <div className="flex items-start space-x-3 text-sm sm:text-base text-[#4A2E2B]">
+              <div className="flex items-start space-x-3 text-sm sm:text-base text-[#2A1A1A]">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FFF0D4] border border-[#C9A24B]/50">
                   <Train className="h-4 w-4 text-[#6E1F2E]" />
                 </div>
@@ -136,14 +136,14 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
                       ? "निकटतम रेलवे स्टेशन"
                       : "Nearest Railway Station"}
                   </p>
-                  <p className="font-serif-luxury text-sm sm:text-base text-[#5C4033] mt-0.5">
+                  <p className="font-serif-luxury text-sm sm:text-base font-semibold text-[#3D2520] mt-0.5">
                     {venueDetails.station[lang]}
                   </p>
                 </div>
               </div>
 
               {/* Airport */}
-              <div className="flex items-start space-x-3 text-sm sm:text-base text-[#4A2E2B]">
+              <div className="flex items-start space-x-3 text-sm sm:text-base text-[#2A1A1A]">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FFF0D4] border border-[#C9A24B]/50">
                   <Plane className="h-4 w-4 text-[#6E1F2E]" />
                 </div>
@@ -153,14 +153,14 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
                       ? "निकटतम हवाई अड्डा"
                       : "Nearest Airport"}
                   </p>
-                  <p className="font-serif-luxury text-sm sm:text-base text-[#5C4033] mt-0.5">
+                  <p className="font-serif-luxury text-sm sm:text-base font-semibold text-[#3D2520] mt-0.5">
                     {venueDetails.airport[lang]}
                   </p>
                 </div>
               </div>
 
               {/* Parking */}
-              <div className="flex items-start space-x-3 text-sm sm:text-base text-[#4A2E2B]">
+              <div className="flex items-start space-x-3 text-sm sm:text-base text-[#2A1A1A]">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FFF0D4] border border-[#C9A24B]/50">
                   <Car className="h-4 w-4 text-[#6E1F2E]" />
                 </div>
@@ -170,7 +170,7 @@ export default function VenueTravel({ lang }: VenueTravelProps) {
                       ? "पार्किंग व्यवस्था"
                       : "Parking Facility"}
                   </p>
-                  <p className="font-serif-luxury text-sm sm:text-base text-[#5C4033] mt-0.5">
+                  <p className="font-serif-luxury text-sm sm:text-base font-semibold text-[#3D2520] mt-0.5">
                     {venueDetails.parking[lang]}
                   </p>
                 </div>

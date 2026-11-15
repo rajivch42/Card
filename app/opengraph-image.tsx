@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { invitationConfig } from "@/config/invitation";
 
-export const alt = "Sejal & Vipul Wedding Invitation";
+export const alt = "Vipul & Sejal Wedding Invitation";
 export const size = {
   width: 1200,
   height: 630,
@@ -90,7 +90,7 @@ export default async function Image() {
           ROYAL WEDDING INVITATION
         </div>
 
-        {/* Couple Names */}
+        {/* Couple Names: Vipul & Sejal */}
         <div
           style={{
             display: "flex",
@@ -104,7 +104,7 @@ export default async function Image() {
             textShadow: "0 4px 20px rgba(201, 162, 75, 0.5)",
           }}
         >
-          {brideName} & {groomName}
+          {groomName} & {brideName}
         </div>
 
         {/* Decorative Lotus / Divider */}

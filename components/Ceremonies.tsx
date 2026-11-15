@@ -138,21 +138,21 @@ function TimelineCard({
 
               {/* Time & Venue details */}
               <div className="mt-4 space-y-3 border-t border-[#E6C97E]/30 pt-4">
-                <div className="flex items-center space-x-2 text-sm sm:text-base text-[#4A2E2B]">
+                <div className="flex items-center space-x-2 text-sm sm:text-base text-[#2A1A1A]">
                   <Clock className="h-4 w-4 shrink-0 text-[#C9A24B]" />
-                  <span className="font-serif-luxury font-semibold">
+                  <span className="font-serif-luxury font-bold">
                     {event.date[lang]}
                   </span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm sm:text-base text-[#4A2E2B]">
+                <div className="flex items-center space-x-2 text-sm sm:text-base text-[#6E1F2E]">
                   <Clock className="h-4 w-4 shrink-0 text-[#6E1F2E]" />
                   <span className="font-serif-luxury font-bold text-[#6E1F2E]">
                     {event.time[lang]}
                   </span>
                 </div>
-                <div className="flex items-start space-x-2 text-sm sm:text-base text-[#4A2E2B]">
+                <div className="flex items-start space-x-2 text-sm sm:text-base text-[#2A1A1A]">
                   <MapPin className="h-4 w-4 shrink-0 text-[#C9A24B] mt-0.5" />
-                  <span className="font-serif-luxury">
+                  <span className="font-serif-luxury font-semibold">
                     {event.venue[lang]}
                   </span>
                 </div>
